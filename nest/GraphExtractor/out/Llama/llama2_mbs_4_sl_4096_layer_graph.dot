@@ -1,0 +1,20 @@
+strict digraph "" {
+	graph [bb="0,0,54,108"];
+	node [label="\N"];
+	0	[height=0.5,
+		label=0,
+		"node"="{'id': 0, 'parameter_size': 333459456, 'activation_size': 18145718294, 'is_tensor_parallelized': False}",
+		pos="27,18",
+		shape=box,
+		style=filled,
+		width=0.75];
+	-1	[height=0.5,
+		label=-1,
+		"node"="{'id': -1, 'parameter_size': 131072000, 'activation_size': 625086795, 'is_tensor_parallelized': False}",
+		pos="27,90",
+		shape=box,
+		style=filled,
+		width=0.75];
+	-1 -> 0	[pos="e,27,36.104 27,71.697 27,64.407 27,55.726 27,47.536",
+		tensorsize=67108864];
+}

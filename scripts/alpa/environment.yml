@@ -1,0 +1,31 @@
+name: alpa_env
+channels:
+  - nvidia
+  - conda-forge
+  - defaults
+  - nvidia/label/cuda-11.3.1
+
+dependencies:
+  - python=3.8
+  - gcc_linux-64=7.5.0
+  - gxx_linux-64=7.5.0
+  - libcublas=11.5.1
+  - cuda-version=11.3
+  - cudatoolkit=11.3
+  - cudatoolkit-dev=11.3
+  - nccl=2.10 
+  - cudnn=8.2.0.53
+  - numpy=1.23.5
+  - pip
+  - pip:
+      - charset-normalizer==3.4.3
+      - chardet==3.0.4
+      - ray==2.2.0
+      - transformers==4.46.3
+      - cupy-cuda113
+      - filelock
+      - grpcio==1.43.0
+      - protobuf==3.20.3
+      - colorama==0.4.6
+      - jax==0.3.22
+      - graphviz

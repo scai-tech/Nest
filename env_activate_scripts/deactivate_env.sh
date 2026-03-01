@@ -1,0 +1,11 @@
+unset NEST_REPO_ROOT
+unset THIRD_PARTY_PATH
+unset WHAM_PATH
+unset SUNSTONE_PATH
+unset GCC_VERSION
+unset GCC_LIBEXEC
+unset CC
+unset CXX
+unset CUDAHOSTCXX
+unset CUDACXX
+unset CUDA_HOME

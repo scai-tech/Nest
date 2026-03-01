@@ -1,0 +1,1479 @@
+{
+    "1": {
+        "TC": {
+            "62": [
+                {
+                    "fwd": {
+                        "latency": 23.468129523809523,
+                        "energy": 1.2321359392155895,
+                        "utilization": -1,
+                        "estimation_time": 105.83287453651428
+                    },
+                    "bwd": {
+                        "latency": 23.468129523809523,
+                        "energy": 1.2321359392155895,
+                        "utilization": -1,
+                        "estimation_time": 101.42807149887085
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 23.468129523809523,
+                        "energy": 1.0199848256966495,
+                        "utilization": -1,
+                        "estimation_time": 115.34215354919434
+                    },
+                    "bwd": {
+                        "latency": 23.468129523809523,
+                        "energy": 1.0199848256966495,
+                        "utilization": -1,
+                        "estimation_time": 112.47577023506165
+                    }
+                }
+            ],
+            "63": [
+                {
+                    "fwd": {
+                        "latency": 2.9335161904761904,
+                        "energy": 0.17833098915440235,
+                        "utilization": -1,
+                        "estimation_time": 105.95816683769226
+                    },
+                    "bwd": {
+                        "latency": 2.4966095238095236,
+                        "energy": 0.1783276970023322,
+                        "utilization": -1,
+                        "estimation_time": 102.79564309120178
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 2.9335161904761904,
+                        "energy": 0.1518120999645348,
+                        "utilization": -1,
+                        "estimation_time": 107.4556257724762
+                    },
+                    "bwd": {
+                        "latency": 2.4966095238095236,
+                        "energy": 0.1421058011310326,
+                        "utilization": -1,
+                        "estimation_time": 117.95121312141418
+                    }
+                }
+            ],
+            "64": [
+                {
+                    "fwd": {
+                        "latency": 2.9335161904761904,
+                        "energy": 0.17833098915440235,
+                        "utilization": -1,
+                        "estimation_time": 101.78003597259521
+                    },
+                    "bwd": {
+                        "latency": 2.4966095238095236,
+                        "energy": 0.1783276970023322,
+                        "utilization": -1,
+                        "estimation_time": 99.65928268432617
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 2.9335161904761904,
+                        "energy": 0.1518120999645348,
+                        "utilization": -1,
+                        "estimation_time": 93.22435784339905
+                    },
+                    "bwd": {
+                        "latency": 2.4966095238095236,
+                        "energy": 0.1421058011310326,
+                        "utilization": -1,
+                        "estimation_time": 91.15986156463623
+                    }
+                }
+            ],
+            "134": [
+                {
+                    "fwd": {
+                        "latency": 23.468130476190478,
+                        "energy": 1.2321359392155895,
+                        "utilization": -1,
+                        "estimation_time": 90.24234914779663
+                    },
+                    "bwd": {
+                        "latency": 23.468130476190478,
+                        "energy": 1.2321359392155895,
+                        "utilization": -1,
+                        "estimation_time": 86.98608803749084
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 23.468130476190478,
+                        "energy": 1.0199848256966495,
+                        "utilization": -1,
+                        "estimation_time": 87.80617165565491
+                    },
+                    "bwd": {
+                        "latency": 23.468130476190478,
+                        "energy": 1.0199848256966495,
+                        "utilization": -1,
+                        "estimation_time": 85.00150775909424
+                    }
+                }
+            ],
+            "118": [
+                {
+                    "fwd": {
+                        "latency": 31.956611428571428,
+                        "energy": 2.701264087400055,
+                        "utilization": -1,
+                        "estimation_time": 112.08315849304199
+                    },
+                    "bwd": {
+                        "latency": 64.91185714285714,
+                        "energy": 3.3826559076021043,
+                        "utilization": -1,
+                        "estimation_time": 109.21575593948364
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 31.956611428571428,
+                        "energy": 2.6387379351852154,
+                        "utilization": -1,
+                        "estimation_time": 109.66122961044312
+                    },
+                    "bwd": {
+                        "latency": 64.91185714285714,
+                        "energy": 3.3409480771239943,
+                        "utilization": -1,
+                        "estimation_time": 107.18904900550842
+                    }
+                }
+            ],
+            "128": [
+                {
+                    "fwd": {
+                        "latency": 64.91184761904762,
+                        "energy": 3.3826559076021043,
+                        "utilization": -1,
+                        "estimation_time": 113.84125113487244
+                    },
+                    "bwd": {
+                        "latency": 31.956601904761904,
+                        "energy": 2.701264087400055,
+                        "utilization": -1,
+                        "estimation_time": 111.0299870967865
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 64.91184761904762,
+                        "energy": 3.3409480771239943,
+                        "utilization": -1,
+                        "estimation_time": 103.33645915985107
+                    },
+                    "bwd": {
+                        "latency": 31.956601904761904,
+                        "energy": 2.6387379351852154,
+                        "utilization": -1,
+                        "estimation_time": 100.8927230834961
+                    }
+                }
+            ],
+            "146": [
+                {
+                    "fwd": {
+                        "latency": 82.13846476190476,
+                        "energy": 4.243007225104696,
+                        "utilization": -1,
+                        "estimation_time": 82.21091485023499
+                    },
+                    "bwd": {
+                        "latency": 83.38676,
+                        "energy": 4.243016631253467,
+                        "utilization": -1,
+                        "estimation_time": 79.8731632232666
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 82.13846476190476,
+                        "energy": 3.500478327788405,
+                        "utilization": -1,
+                        "estimation_time": 76.48093581199646
+                    },
+                    "bwd": {
+                        "latency": 83.38676,
+                        "energy": 3.5655778524442128,
+                        "utilization": -1,
+                        "estimation_time": 74.14294290542603
+                    }
+                }
+            ],
+            "148": [
+                {
+                    "fwd": {
+                        "latency": 82.13845333333333,
+                        "energy": 4.243007225104696,
+                        "utilization": -1,
+                        "estimation_time": 85.71446180343628
+                    },
+                    "bwd": {
+                        "latency": 83.3867580952381,
+                        "energy": 4.243016631253467,
+                        "utilization": -1,
+                        "estimation_time": 81.37212705612183
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 82.13845333333333,
+                        "energy": 3.500478327788405,
+                        "utilization": -1,
+                        "estimation_time": 88.21557521820068
+                    },
+                    "bwd": {
+                        "latency": 83.3867580952381,
+                        "energy": 3.5655778524442128,
+                        "utilization": -1,
+                        "estimation_time": 85.75098013877869
+                    }
+                }
+            ],
+            "150": [
+                {
+                    "fwd": {
+                        "latency": 83.3867580952381,
+                        "energy": 4.243016631253467,
+                        "utilization": -1,
+                        "estimation_time": 108.14077591896057
+                    },
+                    "bwd": {
+                        "latency": 82.13845333333333,
+                        "energy": 4.243007225104696,
+                        "utilization": -1,
+                        "estimation_time": 105.45334696769714
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 83.3867580952381,
+                        "energy": 3.5655778524442128,
+                        "utilization": -1,
+                        "estimation_time": 84.901859998703
+                    },
+                    "bwd": {
+                        "latency": 82.13845333333333,
+                        "energy": 3.500478327788405,
+                        "utilization": -1,
+                        "estimation_time": 82.32123589515686
+                    }
+                }
+            ],
+            "163": [
+                {
+                    "fwd": {
+                        "latency": 409.1162819047619,
+                        "energy": 19.809312918911424,
+                        "utilization": -1,
+                        "estimation_time": 6.435606956481934
+                    },
+                    "bwd": {
+                        "latency": 416.43446857142857,
+                        "energy": 21.560369219281878,
+                        "utilization": -1,
+                        "estimation_time": 5.8371241092681885
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 409.1162819047619,
+                        "energy": 16.044956598409726,
+                        "utilization": -1,
+                        "estimation_time": 3.0283443927764893
+                    },
+                    "bwd": {
+                        "latency": 416.43446857142857,
+                        "energy": 17.96839134607809,
+                        "utilization": -1,
+                        "estimation_time": 2.8994195461273193
+                    }
+                }
+            ],
+            "37": [
+                {
+                    "fwd": {
+                        "latency": 0.003900952380952381,
+                        "energy": 0.00022636716111539202,
+                        "utilization": -1,
+                        "estimation_time": 2.012525796890259
+                    },
+                    "bwd": {
+                        "latency": 0.003961904761904762,
+                        "energy": 0.0003129809168113879,
+                        "utilization": -1,
+                        "estimation_time": 2.008060932159424
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 0.003900952380952381,
+                        "energy": 0.000227196573893376,
+                        "utilization": -1,
+                        "estimation_time": 2.408292531967163
+                    },
+                    "bwd": {
+                        "latency": 0.004388571428571428,
+                        "energy": 0.00031381032958937194,
+                        "utilization": -1,
+                        "estimation_time": 2.4000163078308105
+                    }
+                }
+            ]
+        },
+        "VC": {
+            "151": [
+                {
+                    "fwd": {
+                        "latency": 0.49932190476190474,
+                        "energy": 0.000105628855042048,
+                        "utilization": -1,
+                        "estimation_time": 141.50220346450806
+                    },
+                    "bwd": {
+                        "latency": 0.9986438095238095,
+                        "energy": 0.000105628855042048,
+                        "utilization": -1,
+                        "estimation_time": 141.50220346450806
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 0.24966095238095237,
+                        "energy": 0.000105250148122624,
+                        "utilization": -1,
+                        "estimation_time": 114.48668956756592
+                    },
+                    "bwd": {
+                        "latency": 0.49932190476190474,
+                        "energy": 0.000105250148122624,
+                        "utilization": -1,
+                        "estimation_time": 114.48668956756592
+                    }
+                }
+            ],
+            "123": [
+                {
+                    "fwd": {
+                        "latency": 15.978300952380952,
+                        "energy": 0.003080401501290496,
+                        "utilization": -1,
+                        "estimation_time": 114.59661269187927
+                    },
+                    "bwd": {
+                        "latency": 31.956601904761904,
+                        "energy": 0.003080401501290496,
+                        "utilization": -1,
+                        "estimation_time": 114.59661269187927
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 7.989150476190476,
+                        "energy": 0.003068282879868928,
+                        "utilization": -1,
+                        "estimation_time": 121.48512601852417
+                    },
+                    "bwd": {
+                        "latency": 15.978300952380952,
+                        "energy": 0.003068282879868928,
+                        "utilization": -1,
+                        "estimation_time": 121.48512601852417
+                    }
+                }
+            ],
+            "73": [
+                {
+                    "fwd": {
+                        "latency": 0.49932190476190474,
+                        "energy": 0.000105628855042048,
+                        "utilization": -1,
+                        "estimation_time": 127.5053174495697
+                    },
+                    "bwd": {
+                        "latency": 0.9986438095238095,
+                        "energy": 0.000105628855042048,
+                        "utilization": -1,
+                        "estimation_time": 127.5053174495697
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 0.24966095238095237,
+                        "energy": 0.000105250148122624,
+                        "utilization": -1,
+                        "estimation_time": 144.0792591571808
+                    },
+                    "bwd": {
+                        "latency": 0.49932190476190474,
+                        "energy": 0.000105250148122624,
+                        "utilization": -1,
+                        "estimation_time": 144.0792591571808
+                    }
+                }
+            ],
+            "86": [
+                {
+                    "fwd": {
+                        "latency": 0.06241523809523809,
+                        "energy": 1.3432982880256e-05,
+                        "utilization": -1,
+                        "estimation_time": 114.97898697853088
+                    },
+                    "bwd": {
+                        "latency": 0.12483047619047619,
+                        "energy": 1.3432982880256e-05,
+                        "utilization": -1,
+                        "estimation_time": 114.97898697853088
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 0.031207619047619047,
+                        "energy": 1.3385644515327999e-05,
+                        "utilization": -1,
+                        "estimation_time": 120.54066634178162
+                    },
+                    "bwd": {
+                        "latency": 0.06241523809523809,
+                        "energy": 1.3385644515327999e-05,
+                        "utilization": -1,
+                        "estimation_time": 120.54066634178162
+                    }
+                }
+            ],
+            "84": [
+                {
+                    "fwd": {
+                        "latency": 0.49932190476190474,
+                        "energy": 0.000105628855042048,
+                        "utilization": -1,
+                        "estimation_time": 121.01154398918152
+                    },
+                    "bwd": {
+                        "latency": 0.9986438095238095,
+                        "energy": 0.000105628855042048,
+                        "utilization": -1,
+                        "estimation_time": 121.01154398918152
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 0.24966095238095237,
+                        "energy": 0.000105250148122624,
+                        "utilization": -1,
+                        "estimation_time": 118.03759741783142
+                    },
+                    "bwd": {
+                        "latency": 0.49932190476190474,
+                        "energy": 0.000105250148122624,
+                        "utilization": -1,
+                        "estimation_time": 118.03759741783142
+                    }
+                }
+            ],
+            "97": [
+                {
+                    "fwd": {
+                        "latency": 0.06241523809523809,
+                        "energy": 1.3432982880256e-05,
+                        "utilization": -1,
+                        "estimation_time": 56.46721124649048
+                    },
+                    "bwd": {
+                        "latency": 0.12483047619047619,
+                        "energy": 1.3432982880256e-05,
+                        "utilization": -1,
+                        "estimation_time": 56.46721124649048
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 0.031207619047619047,
+                        "energy": 1.3385644515327999e-05,
+                        "utilization": -1,
+                        "estimation_time": 99.49747729301453
+                    },
+                    "bwd": {
+                        "latency": 0.06241523809523809,
+                        "energy": 1.3385644515327999e-05,
+                        "utilization": -1,
+                        "estimation_time": 99.49747729301453
+                    }
+                }
+            ],
+            "57": [
+                {
+                    "fwd": {
+                        "latency": 0.49932190476190474,
+                        "energy": 9.6372988346368e-05,
+                        "utilization": -1,
+                        "estimation_time": 139.54063892364502
+                    },
+                    "bwd": {
+                        "latency": 0.49938285714285713,
+                        "energy": 9.6372988346368e-05,
+                        "utilization": -1,
+                        "estimation_time": 139.54063892364502
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 0.24966095238095237,
+                        "energy": 9.599428142694401e-05,
+                        "utilization": -1,
+                        "estimation_time": 124.07641291618347
+                    },
+                    "bwd": {
+                        "latency": 0.24969142857142856,
+                        "energy": 9.599428142694401e-05,
+                        "utilization": -1,
+                        "estimation_time": 124.07641291618347
+                    }
+                }
+            ],
+            "85": [
+                {
+                    "fwd": {
+                        "latency": 0.49932190476190474,
+                        "energy": 0.000105628855042048,
+                        "utilization": -1,
+                        "estimation_time": 89.61975431442261
+                    },
+                    "bwd": {
+                        "latency": 0.9986438095238095,
+                        "energy": 0.000105628855042048,
+                        "utilization": -1,
+                        "estimation_time": 89.61975431442261
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 0.24966095238095237,
+                        "energy": 0.000105250148122624,
+                        "utilization": -1,
+                        "estimation_time": 87.06468296051025
+                    },
+                    "bwd": {
+                        "latency": 0.49932190476190474,
+                        "energy": 0.000105250148122624,
+                        "utilization": -1,
+                        "estimation_time": 87.06468296051025
+                    }
+                }
+            ],
+            "82": [
+                {
+                    "fwd": {
+                        "latency": 0.24966095238095237,
+                        "energy": 4.4845627408383996e-05,
+                        "utilization": -1,
+                        "estimation_time": 97.99857902526855
+                    },
+                    "bwd": {
+                        "latency": 0.24966095238095237,
+                        "energy": 4.4845627408383996e-05,
+                        "utilization": -1,
+                        "estimation_time": 97.99857902526855
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 0.12483047619047619,
+                        "energy": 4.4918417948671995e-05,
+                        "utilization": -1,
+                        "estimation_time": 109.50680565834045
+                    },
+                    "bwd": {
+                        "latency": 0.12483047619047619,
+                        "energy": 4.4918417948671995e-05,
+                        "utilization": -1,
+                        "estimation_time": 109.50680565834045
+                    }
+                }
+            ],
+            "98": [
+                {
+                    "fwd": {
+                        "latency": 0.06241523809523809,
+                        "energy": 1.3432982880256e-05,
+                        "utilization": -1,
+                        "estimation_time": 114.57664895057678
+                    },
+                    "bwd": {
+                        "latency": 0.12483047619047619,
+                        "energy": 1.3432982880256e-05,
+                        "utilization": -1,
+                        "estimation_time": 114.57664895057678
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 0.031207619047619047,
+                        "energy": 1.3385644515327999e-05,
+                        "utilization": -1,
+                        "estimation_time": 104.00936245918274
+                    },
+                    "bwd": {
+                        "latency": 0.06241523809523809,
+                        "energy": 1.3385644515327999e-05,
+                        "utilization": -1,
+                        "estimation_time": 104.00936245918274
+                    }
+                }
+            ],
+            "95": [
+                {
+                    "fwd": {
+                        "latency": 0.031207619047619047,
+                        "energy": 5.835079426048e-06,
+                        "utilization": -1,
+                        "estimation_time": 99.44809556007385
+                    },
+                    "bwd": {
+                        "latency": 0.031207619047619047,
+                        "energy": 5.835079426048e-06,
+                        "utilization": -1,
+                        "estimation_time": 99.44809556007385
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 0.015603809523809523,
+                        "energy": 6.0735542435839995e-06,
+                        "utilization": -1,
+                        "estimation_time": 94.01074862480164
+                    },
+                    "bwd": {
+                        "latency": 0.015603809523809523,
+                        "energy": 6.0735542435839995e-06,
+                        "utilization": -1,
+                        "estimation_time": 94.01074862480164
+                    }
+                }
+            ],
+            "76": [
+                {
+                    "fwd": {
+                        "latency": 9.523809523809523e-06,
+                        "energy": 1.50672913225e-09,
+                        "utilization": -1,
+                        "estimation_time": 102.94656181335449
+                    },
+                    "bwd": {
+                        "latency": 9.523809523809523e-06,
+                        "energy": 1.50672913225e-09,
+                        "utilization": -1,
+                        "estimation_time": 102.94656181335449
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 9.523809523809523e-06,
+                        "energy": 2.75601361225e-09,
+                        "utilization": -1,
+                        "estimation_time": 104.47997498512268
+                    },
+                    "bwd": {
+                        "latency": 9.523809523809523e-06,
+                        "energy": 2.75601361225e-09,
+                        "utilization": -1,
+                        "estimation_time": 104.47997498512268
+                    }
+                }
+            ],
+            "80": [
+                {
+                    "fwd": {
+                        "latency": 9.523809523809523e-06,
+                        "energy": 1.50672913225e-09,
+                        "utilization": -1,
+                        "estimation_time": 98.50991368293762
+                    },
+                    "bwd": {
+                        "latency": 9.523809523809523e-06,
+                        "energy": 1.50672913225e-09,
+                        "utilization": -1,
+                        "estimation_time": 98.50991368293762
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 9.523809523809523e-06,
+                        "energy": 2.75601361225e-09,
+                        "utilization": -1,
+                        "estimation_time": 102.58975005149841
+                    },
+                    "bwd": {
+                        "latency": 9.523809523809523e-06,
+                        "energy": 2.75601361225e-09,
+                        "utilization": -1,
+                        "estimation_time": 102.58975005149841
+                    }
+                }
+            ],
+            "89": [
+                {
+                    "fwd": {
+                        "latency": 9.523809523809523e-06,
+                        "energy": 1.50672913225e-09,
+                        "utilization": -1,
+                        "estimation_time": 156.5016462802887
+                    },
+                    "bwd": {
+                        "latency": 9.523809523809523e-06,
+                        "energy": 1.50672913225e-09,
+                        "utilization": -1,
+                        "estimation_time": 156.5016462802887
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 9.523809523809523e-06,
+                        "energy": 2.75601361225e-09,
+                        "utilization": -1,
+                        "estimation_time": 132.50244998931885
+                    },
+                    "bwd": {
+                        "latency": 9.523809523809523e-06,
+                        "energy": 2.75601361225e-09,
+                        "utilization": -1,
+                        "estimation_time": 132.50244998931885
+                    }
+                }
+            ],
+            "93": [
+                {
+                    "fwd": {
+                        "latency": 9.523809523809523e-06,
+                        "energy": 1.50672913225e-09,
+                        "utilization": -1,
+                        "estimation_time": 109.0866026878357
+                    },
+                    "bwd": {
+                        "latency": 9.523809523809523e-06,
+                        "energy": 1.50672913225e-09,
+                        "utilization": -1,
+                        "estimation_time": 109.0866026878357
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 9.523809523809523e-06,
+                        "energy": 2.75601361225e-09,
+                        "utilization": -1,
+                        "estimation_time": 110.95104098320007
+                    },
+                    "bwd": {
+                        "latency": 9.523809523809523e-06,
+                        "energy": 2.75601361225e-09,
+                        "utilization": -1,
+                        "estimation_time": 110.95104098320007
+                    }
+                }
+            ],
+            "106": [
+                {
+                    "fwd": {
+                        "latency": 9.523809523809523e-07,
+                        "energy": 4.2607249224999996e-10,
+                        "utilization": -1,
+                        "estimation_time": 96.5784604549408
+                    },
+                    "bwd": {
+                        "latency": 9.523809523809523e-07,
+                        "energy": 4.2607249224999996e-10,
+                        "utilization": -1,
+                        "estimation_time": 96.5784604549408
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 9.523809523809523e-07,
+                        "energy": 5.9470033225e-10,
+                        "utilization": -1,
+                        "estimation_time": 88.50552487373352
+                    },
+                    "bwd": {
+                        "latency": 9.523809523809523e-07,
+                        "energy": 5.9470033225e-10,
+                        "utilization": -1,
+                        "estimation_time": 88.50552487373352
+                    }
+                }
+            ],
+            "115": [
+                {
+                    "fwd": {
+                        "latency": 9.523809523809523e-07,
+                        "energy": 4.2607249224999996e-10,
+                        "utilization": -1,
+                        "estimation_time": 112.95432329177856
+                    },
+                    "bwd": {
+                        "latency": 9.523809523809523e-07,
+                        "energy": 4.2607249224999996e-10,
+                        "utilization": -1,
+                        "estimation_time": 112.95432329177856
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 9.523809523809523e-07,
+                        "energy": 5.9470033225e-10,
+                        "utilization": -1,
+                        "estimation_time": 111.0675721168518
+                    },
+                    "bwd": {
+                        "latency": 9.523809523809523e-07,
+                        "energy": 5.9470033225e-10,
+                        "utilization": -1,
+                        "estimation_time": 111.0675721168518
+                    }
+                }
+            ],
+            "124": [
+                {
+                    "fwd": {
+                        "latency": 175.76132,
+                        "energy": 0.03196498566256723,
+                        "utilization": -1,
+                        "estimation_time": 99.71270561218262
+                    },
+                    "bwd": {
+                        "latency": 31.956601904761904,
+                        "energy": 0.03196498566256723,
+                        "utilization": -1,
+                        "estimation_time": 99.71270561218262
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 87.88066476190477,
+                        "energy": 0.03214492835451162,
+                        "utilization": -1,
+                        "estimation_time": 115.19061470031738
+                    },
+                    "bwd": {
+                        "latency": 15.978300952380952,
+                        "energy": 0.03214492835451162,
+                        "utilization": -1,
+                        "estimation_time": 115.19061470031738
+                    }
+                }
+            ],
+            "127": [
+                {
+                    "fwd": {
+                        "latency": 31.956601904761904,
+                        "energy": 0.005386486883024896,
+                        "utilization": -1,
+                        "estimation_time": 104.86580014228821
+                    },
+                    "bwd": {
+                        "latency": 15.978300952380952,
+                        "energy": 0.005386486883024896,
+                        "utilization": -1,
+                        "estimation_time": 104.86580014228821
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 15.978300952380952,
+                        "energy": 0.005374630405603328,
+                        "utilization": -1,
+                        "estimation_time": 85.50136923789978
+                    },
+                    "bwd": {
+                        "latency": 7.989150476190476,
+                        "energy": 0.005374630405603328,
+                        "utilization": -1,
+                        "estimation_time": 85.50136923789978
+                    }
+                }
+            ],
+            "137": [
+                {
+                    "fwd": {
+                        "latency": 12.982369523809524,
+                        "energy": 0.0020393973759344638,
+                        "utilization": -1,
+                        "estimation_time": 78.07546377182007
+                    },
+                    "bwd": {
+                        "latency": 13.481691428571429,
+                        "energy": 0.0020393973759344638,
+                        "utilization": -1,
+                        "estimation_time": 78.07546377182007
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 6.491184761904762,
+                        "energy": 0.0019375979591761921,
+                        "utilization": -1,
+                        "estimation_time": 78.47056722640991
+                    },
+                    "bwd": {
+                        "latency": 6.740845714285714,
+                        "energy": 0.0019375979591761921,
+                        "utilization": -1,
+                        "estimation_time": 78.47056722640991
+                    }
+                }
+            ],
+            "141": [
+                {
+                    "fwd": {
+                        "latency": 0.49932190476190474,
+                        "energy": 0.000105628855042048,
+                        "utilization": -1,
+                        "estimation_time": 71.55948162078857
+                    },
+                    "bwd": {
+                        "latency": 0.9986438095238095,
+                        "energy": 0.000105628855042048,
+                        "utilization": -1,
+                        "estimation_time": 71.55948162078857
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 0.24966095238095237,
+                        "energy": 0.000105250148122624,
+                        "utilization": -1,
+                        "estimation_time": 75.42972135543823
+                    },
+                    "bwd": {
+                        "latency": 0.49932190476190474,
+                        "energy": 0.000105250148122624,
+                        "utilization": -1,
+                        "estimation_time": 75.42972135543823
+                    }
+                }
+            ],
+            "145": [
+                {
+                    "fwd": {
+                        "latency": 0.49932190476190474,
+                        "energy": 9.6372988346368e-05,
+                        "utilization": -1,
+                        "estimation_time": 75.02116823196411
+                    },
+                    "bwd": {
+                        "latency": 0.49938285714285713,
+                        "energy": 9.6372988346368e-05,
+                        "utilization": -1,
+                        "estimation_time": 75.02116823196411
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 0.24966095238095237,
+                        "energy": 9.599428142694401e-05,
+                        "utilization": -1,
+                        "estimation_time": 77.11056637763977
+                    },
+                    "bwd": {
+                        "latency": 0.24969142857142856,
+                        "energy": 9.599428142694401e-05,
+                        "utilization": -1,
+                        "estimation_time": 77.11056637763977
+                    }
+                }
+            ],
+            "149": [
+                {
+                    "fwd": {
+                        "latency": 1.7476266666666667,
+                        "energy": 0.000369045632647168,
+                        "utilization": -1,
+                        "estimation_time": 86.35346627235413
+                    },
+                    "bwd": {
+                        "latency": 3.4952533333333333,
+                        "energy": 0.000369045632647168,
+                        "utilization": -1,
+                        "estimation_time": 86.35346627235413
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 0.8738133333333333,
+                        "energy": 0.00036772015842918403,
+                        "utilization": -1,
+                        "estimation_time": 102.44166088104248
+                    },
+                    "bwd": {
+                        "latency": 1.7476266666666667,
+                        "energy": 0.00036772015842918403,
+                        "utilization": -1,
+                        "estimation_time": 102.44166088104248
+                    }
+                }
+            ],
+            "153": [
+                {
+                    "fwd": {
+                        "latency": 12.982369523809524,
+                        "energy": 0.0020393973759344638,
+                        "utilization": -1,
+                        "estimation_time": 73.43919801712036
+                    },
+                    "bwd": {
+                        "latency": 13.481691428571429,
+                        "energy": 0.0020393973759344638,
+                        "utilization": -1,
+                        "estimation_time": 73.43919801712036
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 6.491184761904762,
+                        "energy": 0.0019375979591761921,
+                        "utilization": -1,
+                        "estimation_time": 83.51642847061157
+                    },
+                    "bwd": {
+                        "latency": 6.740845714285714,
+                        "energy": 0.0019375979591761921,
+                        "utilization": -1,
+                        "estimation_time": 83.51642847061157
+                    }
+                }
+            ],
+            "157": [
+                {
+                    "fwd": {
+                        "latency": 0.49932190476190474,
+                        "energy": 0.000105628855042048,
+                        "utilization": -1,
+                        "estimation_time": 47.45219564437866
+                    },
+                    "bwd": {
+                        "latency": 0.9986438095238095,
+                        "energy": 0.000105628855042048,
+                        "utilization": -1,
+                        "estimation_time": 47.45219564437866
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 0.24966095238095237,
+                        "energy": 0.000105250148122624,
+                        "utilization": -1,
+                        "estimation_time": 3.6071791648864746
+                    },
+                    "bwd": {
+                        "latency": 0.49932190476190474,
+                        "energy": 0.000105250148122624,
+                        "utilization": -1,
+                        "estimation_time": 3.6071791648864746
+                    }
+                }
+            ],
+            "161": [
+                {
+                    "fwd": {
+                        "latency": 0.49932190476190474,
+                        "energy": 9.6372988346368e-05,
+                        "utilization": -1,
+                        "estimation_time": 0.8510837554931641
+                    },
+                    "bwd": {
+                        "latency": 0.49938285714285713,
+                        "energy": 9.6372988346368e-05,
+                        "utilization": -1,
+                        "estimation_time": 0.8510837554931641
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 0.24966095238095237,
+                        "energy": 9.599428142694401e-05,
+                        "utilization": -1,
+                        "estimation_time": 0.8435320854187012
+                    },
+                    "bwd": {
+                        "latency": 0.24969142857142856,
+                        "energy": 9.599428142694401e-05,
+                        "utilization": -1,
+                        "estimation_time": 0.8435320854187012
+                    }
+                }
+            ],
+            "4": [
+                {
+                    "fwd": {
+                        "latency": 9.523809523809523e-07,
+                        "energy": 4.2607249224999996e-10,
+                        "utilization": -1,
+                        "estimation_time": 0.847937822341919
+                    },
+                    "bwd": {
+                        "latency": 9.523809523809523e-07,
+                        "energy": 4.2607249224999996e-10,
+                        "utilization": -1,
+                        "estimation_time": 0.847937822341919
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 9.523809523809523e-07,
+                        "energy": 5.9470033225e-10,
+                        "utilization": -1,
+                        "estimation_time": 0.8397455215454102
+                    },
+                    "bwd": {
+                        "latency": 9.523809523809523e-07,
+                        "energy": 5.9470033225e-10,
+                        "utilization": -1,
+                        "estimation_time": 0.8397455215454102
+                    }
+                }
+            ],
+            "6": [
+                {
+                    "fwd": {
+                        "latency": 3.0476190476190475e-05,
+                        "energy": 2.6901941478400004e-07,
+                        "utilization": -1,
+                        "estimation_time": 1.6364858150482178
+                    },
+                    "bwd": {
+                        "latency": 3.0476190476190475e-05,
+                        "energy": 2.6901941478400004e-07,
+                        "utilization": -1,
+                        "estimation_time": 1.6364858150482178
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 1.5238095238095238e-05,
+                        "energy": 5.32642738688e-07,
+                        "utilization": -1,
+                        "estimation_time": 1.0780231952667236
+                    },
+                    "bwd": {
+                        "latency": 1.5238095238095238e-05,
+                        "energy": 5.32642738688e-07,
+                        "utilization": -1,
+                        "estimation_time": 1.0780231952667236
+                    }
+                }
+            ],
+            "18": [
+                {
+                    "fwd": {
+                        "latency": 0.12486095238095238,
+                        "energy": 2.2560761118976e-05,
+                        "utilization": -1,
+                        "estimation_time": 0.8453984260559082
+                    },
+                    "bwd": {
+                        "latency": 0.12486095238095238,
+                        "energy": 2.2560761118976e-05,
+                        "utilization": -1,
+                        "estimation_time": 0.8453984260559082
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 0.06243047619047619,
+                        "energy": 2.2729707713023996e-05,
+                        "utilization": -1,
+                        "estimation_time": 0.8406999111175537
+                    },
+                    "bwd": {
+                        "latency": 0.06243047619047619,
+                        "energy": 2.2729707713023996e-05,
+                        "utilization": -1,
+                        "estimation_time": 0.8406999111175537
+                    }
+                }
+            ],
+            "12": [
+                {
+                    "fwd": {
+                        "latency": 9.523809523809523e-07,
+                        "energy": 2.9807249225e-10,
+                        "utilization": -1,
+                        "estimation_time": 1.2604165077209473
+                    },
+                    "bwd": {
+                        "latency": 9.523809523809523e-07,
+                        "energy": 2.9807249225e-10,
+                        "utilization": -1,
+                        "estimation_time": 1.2604165077209473
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 9.523809523809523e-07,
+                        "energy": 4.6670033225e-10,
+                        "utilization": -1,
+                        "estimation_time": 0.843703031539917
+                    },
+                    "bwd": {
+                        "latency": 9.523809523809523e-07,
+                        "energy": 4.6670033225e-10,
+                        "utilization": -1,
+                        "estimation_time": 0.843703031539917
+                    }
+                }
+            ],
+            "21": [
+                {
+                    "fwd": {
+                        "latency": 3.142857142857143e-05,
+                        "energy": 2.1666933356500005e-07,
+                        "utilization": -1,
+                        "estimation_time": 1.6078953742980957
+                    },
+                    "bwd": {
+                        "latency": 3.142857142857143e-05,
+                        "energy": 2.1666933356500005e-07,
+                        "utilization": -1,
+                        "estimation_time": 1.6078953742980957
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 1.619047619047619e-05,
+                        "energy": 3.5740274153350005e-07,
+                        "utilization": -1,
+                        "estimation_time": 0.8626348972320557
+                    },
+                    "bwd": {
+                        "latency": 1.619047619047619e-05,
+                        "energy": 3.5740274153350005e-07,
+                        "utilization": -1,
+                        "estimation_time": 0.8626348972320557
+                    }
+                }
+            ],
+            "24": [
+                {
+                    "fwd": {
+                        "latency": 0.12486095238095238,
+                        "energy": 2.6611685929215997e-05,
+                        "utilization": -1,
+                        "estimation_time": 0.8405904769897461
+                    },
+                    "bwd": {
+                        "latency": 0.24972190476190476,
+                        "energy": 2.6611685929215997e-05,
+                        "utilization": -1,
+                        "estimation_time": 0.8405904769897461
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 0.06243047619047619,
+                        "energy": 2.6517009199359997e-05,
+                        "utilization": -1,
+                        "estimation_time": 0.9836287498474121
+                    },
+                    "bwd": {
+                        "latency": 0.12486095238095238,
+                        "energy": 2.6517009199359997e-05,
+                        "utilization": -1,
+                        "estimation_time": 0.9836287498474121
+                    }
+                }
+            ],
+            "40": [
+                {
+                    "fwd": {
+                        "latency": 0.05071238095238095,
+                        "energy": 9.084299559936001e-06,
+                        "utilization": -1,
+                        "estimation_time": 0.8435354232788086
+                    },
+                    "bwd": {
+                        "latency": 0.007801904761904762,
+                        "energy": 9.084299559936001e-06,
+                        "utilization": -1,
+                        "estimation_time": 0.8435354232788086
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 0.025356190476190477,
+                        "energy": 9.343484912128001e-06,
+                        "utilization": -1,
+                        "estimation_time": 0.848283052444458
+                    },
+                    "bwd": {
+                        "latency": 0.003900952380952381,
+                        "energy": 9.343484912128001e-06,
+                        "utilization": -1,
+                        "estimation_time": 0.848283052444458
+                    }
+                }
+            ],
+            "41": [
+                {
+                    "fwd": {
+                        "latency": 0.05071238095238095,
+                        "energy": 9.084299559936001e-06,
+                        "utilization": -1,
+                        "estimation_time": 1.4300665855407715
+                    },
+                    "bwd": {
+                        "latency": 0.007801904761904762,
+                        "energy": 9.084299559936001e-06,
+                        "utilization": -1,
+                        "estimation_time": 1.4300665855407715
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 0.025356190476190477,
+                        "energy": 9.343484912128001e-06,
+                        "utilization": -1,
+                        "estimation_time": 0.8420219421386719
+                    },
+                    "bwd": {
+                        "latency": 0.003900952380952381,
+                        "energy": 9.343484912128001e-06,
+                        "utilization": -1,
+                        "estimation_time": 0.8420219421386719
+                    }
+                }
+            ],
+            "42": [
+                {
+                    "fwd": {
+                        "latency": 0.003900952380952381,
+                        "energy": 9.58760928256e-07,
+                        "utilization": -1,
+                        "estimation_time": 0.8436603546142578
+                    },
+                    "bwd": {
+                        "latency": 0.003900952380952381,
+                        "energy": 9.58760928256e-07,
+                        "utilization": -1,
+                        "estimation_time": 0.8436603546142578
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 0.0019504761904761904,
+                        "energy": 9.55802280448e-07,
+                        "utilization": -1,
+                        "estimation_time": 3.337462902069092
+                    },
+                    "bwd": {
+                        "latency": 0.0019504761904761904,
+                        "energy": 9.55802280448e-07,
+                        "utilization": -1,
+                        "estimation_time": 3.337462902069092
+                    }
+                }
+            ],
+            "43": [
+                {
+                    "fwd": {
+                        "latency": 0.003900952380952381,
+                        "energy": 9.58760928256e-07,
+                        "utilization": -1,
+                        "estimation_time": 4.515098810195923
+                    },
+                    "bwd": {
+                        "latency": 0.003900952380952381,
+                        "energy": 9.58760928256e-07,
+                        "utilization": -1,
+                        "estimation_time": 4.515098810195923
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 0.0019504761904761904,
+                        "energy": 9.55802280448e-07,
+                        "utilization": -1,
+                        "estimation_time": 2.969777822494507
+                    },
+                    "bwd": {
+                        "latency": 0.0019504761904761904,
+                        "energy": 9.55802280448e-07,
+                        "utilization": -1,
+                        "estimation_time": 2.969777822494507
+                    }
+                }
+            ],
+            "49": [
+                {
+                    "fwd": {
+                        "latency": 12.982369523809524,
+                        "energy": 0.0020393973759344638,
+                        "utilization": -1,
+                        "estimation_time": 0.8398823738098145
+                    },
+                    "bwd": {
+                        "latency": 13.481691428571429,
+                        "energy": 0.0020393973759344638,
+                        "utilization": -1,
+                        "estimation_time": 0.8398823738098145
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 6.491184761904762,
+                        "energy": 0.0019375979591761921,
+                        "utilization": -1,
+                        "estimation_time": 0.8369345664978027
+                    },
+                    "bwd": {
+                        "latency": 6.740845714285714,
+                        "energy": 0.0019375979591761921,
+                        "utilization": -1,
+                        "estimation_time": 0.8369345664978027
+                    }
+                }
+            ],
+            "53": [
+                {
+                    "fwd": {
+                        "latency": 0.49932190476190474,
+                        "energy": 0.000105628855042048,
+                        "utilization": -1,
+                        "estimation_time": 2.7907533645629883
+                    },
+                    "bwd": {
+                        "latency": 0.9986438095238095,
+                        "energy": 0.000105628855042048,
+                        "utilization": -1,
+                        "estimation_time": 2.7907533645629883
+                    }
+                },
+                {
+                    "fwd": {
+                        "latency": 0.24966095238095237,
+                        "energy": 0.000105250148122624,
+                        "utilization": -1,
+                        "estimation_time": 6.9730119705200195
+                    },
+                    "bwd": {
+                        "latency": 0.49932190476190474,
+                        "energy": 0.000105250148122624,
+                        "utilization": -1,
+                        "estimation_time": 6.9730119705200195
+                    }
+                }
+            ]
+        },
+        "AR": {}
+    }
+}

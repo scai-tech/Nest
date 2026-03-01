@@ -1,0 +1,62 @@
+
+------
+result[(17, 18, 0, 1), 1] = ModuleProfileResult(compute_cost=177.652, peak_memory=32.037 GB, invar_size=25.473 GB, outvar_size=3.750 GB, temp_buffer_size=6.438 GB, available_memory=64.000 GB, comm_cost=0.000)                          result[(17, 19, 0, 0), 0] = ModuleProfileResult(compute_cost=282.081, peak_memory=36.544 GB, invar_size=6.582 GB, outvar_size=25.961 GB, temp_buffer_size=4.000 GB, available_memory=64.000 GB, comm_cost=0.000)                          result[(17, 19, 0, 0), 1] = ModuleProfileResult(compute_cost=213.549, peak_mem
+ory=39.232 GB, invar_size=32.544 GB, outvar_size=6.582 GB, temp_buffer_size=6.
+563 GB, available_memory=64.000 GB, comm_cost=0.000)                          
+result[(17, 19, 0, 1), 0] = ModuleProfileResult(compute_cost=282.081, peak_mem
+ory=36.544 GB, invar_size=6.582 GB, outvar_size=25.961 GB, temp_buffer_size=4.
+000 GB, available_memory=64.000 GB, comm_cost=0.000)                          
+result[(17, 19, 0, 1), 1] = ModuleProfileResult(compute_cost=213.549, peak_mem
+ory=39.232 GB, invar_size=32.544 GB, outvar_size=6.582 GB, temp_buffer_size=6.
+563 GB, available_memory=64.000 GB, comm_cost=0.000)                          
+result[(18, 18, 0, 0), 0] = ModuleProfileResult(compute_cost=133.098, peak_mem
+ory=17.533 GB, invar_size=2.156 GB, outvar_size=11.377 GB, temp_buffer_size=4.
+000 GB, available_memory=64.000 GB, comm_cost=0.000)                          
+result[(18, 18, 0, 0), 1] = ModuleProfileResult(compute_cost=92.267, peak_memo
+ry=19.784 GB, invar_size=13.533 GB, outvar_size=2.156 GB, temp_buffer_size=6.1
+26 GB, available_memory=64.000 GB, comm_cost=0.000)                           
+result[(18, 18, 0, 1), 0] = ModuleProfileResult(compute_cost=133.098, peak_mem
+ory=17.533 GB, invar_size=2.156 GB, outvar_size=11.377 GB, temp_buffer_size=4.
+000 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(18, 18, 0, 1), 1] = ModuleProfileResult(compute_cost=92.267, peak_memo
+ry=19.784 GB, invar_size=13.533 GB, outvar_size=2.156 GB, temp_buffer_size=6.1
+26 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(18, 19, 0, 0), 0] = ModuleProfileResult(compute_cost=150.871, peak_mem
+ory=24.604 GB, invar_size=4.988 GB, outvar_size=15.616 GB, temp_buffer_size=4.
+000 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(18, 19, 0, 0), 1] = ModuleProfileResult(compute_cost=128.164, peak_mem
+ory=26.980 GB, invar_size=20.604 GB, outvar_size=4.988 GB, temp_buffer_size=6.
+251 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(18, 19, 0, 0), 0] = ModuleProfileResult(compute_cost=150.871, peak_memory=24.604 GB, invar_size=4.988 GB, outvar_size=15.616 GB, temp_buffer_size=4.
+000 GB, available_memory=64.000 GB, comm_cost=0.000)                          
+result[(18, 19, 0, 0), 1] = ModuleProfileResult(compute_cost=128.164, peak_mem
+ory=26.980 GB, invar_size=20.604 GB, outvar_size=4.988 GB, temp_buffer_size=6.
+251 GB, available_memory=64.000 GB, comm_cost=0.000)                          
+result[(18, 19, 0, 1), 0] = ModuleProfileResult(compute_cost=150.871, peak_mem
+ory=24.604 GB, invar_size=4.988 GB, outvar_size=15.616 GB, temp_buffer_size=4.
+000 GB, available_memory=64.000 GB, comm_cost=0.000)                          
+result[(18, 19, 0, 1), 1] = ModuleProfileResult(compute_cost=128.164, peak_mem
+ory=26.980 GB, invar_size=20.604 GB, outvar_size=4.988 GB, temp_buffer_size=6.
+251 GB, available_memory=64.000 GB, comm_cost=0.000)                          
+result[(19, 19, 0, 0), 0] = ModuleProfileResult(compute_cost=17.773, peak_memo
+ry=7.602 GB, invar_size=3.238 GB, outvar_size=4.363 GB, temp_buffer_size=0.000
+ GB, available_memory=64.000 GB, comm_cost=0.000)                             
+result[(19, 19, 0, 0), 1] = ModuleProfileResult(compute_cost=35.897, peak_memo
+ry=10.818 GB, invar_size=7.477 GB, outvar_size=3.238 GB, temp_buffer_size=2.93
+6 GB, available_memory=64.000 GB, comm_cost=0.000)                            
+result[(19, 19, 0, 1), 0] = ModuleProfileResult(compute_cost=17.773, peak_memo
+ry=7.602 GB, invar_size=3.238 GB, outvar_size=4.363 GB, temp_buffer_size=0.000
+ GB, available_memory=64.000 GB, comm_cost=0.000)                             
+result[(19, 19, 0, 1), 1] = ModuleProfileResult(compute_cost=35.897, peak_memo
+ry=10.818 GB, invar_size=7.477 GB, outvar_size=3.238 GB, temp_buffer_size=2.93
+6 GB, available_memory=64.000 GB, comm_cost=0.000)                            
+Profiling for submesh 0 (1, 1) takes 1768.25 seconds                          
+--------------------------------------------------                            
+Profile result saved to: profile-results-2026-02-21-02-30-26.npy              
+----------------------------------------------------------------------        
+Best solution cost: inf                                                       
+Training step encountered an error: no solution in auto stage construction.   
+Elapsed time: 9300.97s                                                        
+--------------------------------------------------  
+
+./run_test.sh: line 99: atch: command not found

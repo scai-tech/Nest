@@ -1,0 +1,2 @@
+model,num_devices,mbs,time_per_batch,tput
+bert,64,4096,7957.453297,0.514738

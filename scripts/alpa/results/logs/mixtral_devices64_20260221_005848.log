@@ -1,0 +1,1163 @@
+2026-02-21 01:01:01,353	INFO worker.py:1352 -- Connecting to existing Ray cluster at address: 172.27.147.10:6379...
+2026-02-21 01:01:01,435	INFO worker.py:1538 -- Connected to Ray cluster.
+2026-02-21 01:02:42.120046: E external/org_tensorflow/tensorflow/compiler/xla/service/slow_operation_alarm.cc:65] Constant folding an instruction is taking > 1s:
+
+  pad.1 (displaying the full instruction incurs a runtime overhead. Raise your logging level to 4 or above).
+
+This isn't necessarily a bug; constant-folding is inherently a trade-off between compilation time and speed at runtime.  XLA has some guards that attempt to keep constant folding from taking too long, but fundamentally you'll always be able to come up with an input program that takes a long time.
+
+If you'd like to file a bug, run with envvar XLA_FLAGS=--xla_dump_to=/tmp/foo and attach the results.
+2026-02-21 01:02:43.245965: E external/org_tensorflow/tensorflow/compiler/xla/service/slow_operation_alarm.cc:133] The operation took 2.140174908s
+Constant folding an instruction is taking > 1s:
+
+  pad.1 (displaying the full instruction incurs a runtime overhead. Raise your logging level to 4 or above).
+
+This isn't necessarily a bug; constant-folding is inherently a trade-off between compilation time and speed at runtime.  XLA has some guards that attempt to keep constant folding from taking too long, but fundamentally you'll always be able to come up with an input program that takes a long time.
+
+If you'd like to file a bug, run with envvar XLA_FLAGS=--xla_dump_to=/tmp/foo and attach the results.
+2026-02-21 01:02:52.748349: E external/org_tensorflow/tensorflow/compiler/xla/service/slow_operation_alarm.cc:65] Constant folding an instruction is taking > 2s:
+
+  pad.2 (displaying the full instruction incurs a runtime overhead. Raise your logging level to 4 or above).
+
+This isn't necessarily a bug; constant-folding is inherently a trade-off between compilation time and speed at runtime.  XLA has some guards that attempt to keep constant folding from taking too long, but fundamentally you'll always be able to come up with an input program that takes a long time.
+
+If you'd like to file a bug, run with envvar XLA_FLAGS=--xla_dump_to=/tmp/foo and attach the results.
+2026-02-21 01:02:52.888660: E external/org_tensorflow/tensorflow/compiler/xla/service/slow_operation_alarm.cc:133] The operation took 2.140369467s
+Constant folding an instruction is taking > 2s:
+
+  pad.2 (displaying the full instruction incurs a runtime overhead. Raise your logging level to 4 or above).
+
+This isn't necessarily a bug; constant-folding is inherently a trade-off between compilation time and speed at runtime.  XLA has some guards that attempt to keep constant folding from taking too long, but fundamentally you'll always be able to come up with an input program that takes a long time.
+
+If you'd like to file a bug, run with envvar XLA_FLAGS=--xla_dump_to=/tmp/foo and attach the results.
+Running with: num_nodes=1, total_devices=8, num_layers=4, num_microbatch=4096
+Compiling and running parallelized training step...
+-------------------- Automatic stage clustering --------------------
+submesh_choices: ((1, 1), (1, 2), (1, 4), (1, 8))
+- Profiling for submesh 3 (1, 8):
+- Generate all stage infos (Jaxpr -> HLO)
+- Compile all stages, get estimations
+num of workers:2
+[2m[36m(CompileWorker pid=1934595)[0m compiled for stage:0 name: stage_0_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1934595)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.648579047619048
+[2m[36m(CompileWorker pid=1934594)[0m compiled for stage:1 name: stage_0_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1934594)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.648579047619048
+[2m[36m(CompileWorker pid=1934595)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 512, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.7476266666666667
+[2m[36m(CompileWorker pid=1934595)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=1934595)[0m compiled for stage:0 name: stage_0_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1934595)[0m  tensor (Large latency) dimensions: (1, 14336, 512, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.5122133333333334
+[2m[36m(CompileWorker pid=1934594)[0m  tensor (Large latency) dimensions: (1, 4096, 1792, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.6370438095238096
+[2m[36m(CompileWorker pid=1934594)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 1792, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.4966095238095236
+[2m[36m(CompileWorker pid=1934595)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=1934594)[0m compiled for stage:1 name: stage_0_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1934595)[0m  tensor (Large latency) dimensions: (1, 512, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.5122133333333334
+[2m[36m(CompileWorker pid=1934595)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1934594)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 512, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.7476266666666667
+[2m[36m(CompileWorker pid=1934594)[0m  tensor (Large latency) dimensions: (1, 512, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 9.065813333333333
+[2m[36m(CompileWorker pid=1934594)[0m  tensor (Large latency) dimensions: (1, 4096, 1792, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.6370438095238096
+[2m[36m(CompileWorker pid=1934594)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1934595)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1934595)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1934595)[0m  tensor (Large latency) dimensions: (1, 4000, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.654430476190476
+[2m[36m(CompileWorker pid=1934594)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1934594)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1934594)[0m  tensor (Large latency) dimensions: (1, 4000, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.654430476190476
+- parse estimation results for all stages
+Using pre computed peak Mem for (0, 4, 3, 0), module 0
+result[(0, 4, 3, 0), 0] = ModuleProfileResult(compute_cost=1067.348, peak_memory=10.500 GB, invar_size=1.382 GB, outvar_size=28.978 GB, temp_buffer_size=-19.860 GB, available_memory=64.000 GB, comm_cost=8.324)
+Using pre computed peak Mem for (0, 4, 3, 0), module 1
+result[(0, 4, 3, 0), 1] = ModuleProfileResult(compute_cost=3108.282, peak_memory=12.250 GB, invar_size=30.360 GB, outvar_size=1.382 GB, temp_buffer_size=-18.110 GB, available_memory=64.000 GB, comm_cost=26.427)
+result[(0, 4, 3, 1), 0] = ModuleProfileResult(compute_cost=344.288, peak_memory=18.360 GB, invar_size=4.445 GB, outvar_size=13.665 GB, temp_buffer_size=0.250 GB, available_memory=64.000 GB, comm_cost=1.167)
+result[(0, 4, 3, 1), 1] = ModuleProfileResult(compute_cost=1019.491, peak_memory=23.186 GB, invar_size=18.110 GB, outvar_size=4.445 GB, temp_buffer_size=5.077 GB, available_memory=64.000 GB, comm_cost=15.440)
+Profiling for submesh 3 (1, 8) takes 144.96 seconds
+--------------------------------------------------
+- Profiling for submesh 2 (1, 4):
+- Generate all stage infos (Jaxpr -> HLO)
+- Compile all stages, get estimations
+num of workers:12
+[2m[36m(CompileWorker pid=1938391)[0m compiled for stage:0 name: stage_0_0_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1938381)[0m compiled for stage:10 name: stage_1_1_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1938380)[0m compiled for stage:11 name: stage_1_1_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1938390)[0m compiled for stage:1 name: stage_0_0_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1938391)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 8000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 11.546819047619048
+[2m[36m(CompileWorker pid=1938380)[0m  tensor (Large latency) dimensions: (1, 4096, 3584, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938390)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 8000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 11.546819047619048
+[2m[36m(CompileWorker pid=1938389)[0m compiled for stage:2 name: stage_0_1_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1938381)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.369066666666667
+[2m[36m(CompileWorker pid=1938389)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 8000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 11.546819047619048
+[2m[36m(CompileWorker pid=1938391)[0m  tensor (Large latency) dimensions: (1, 4096, 1024, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.4355504761904763
+[2m[36m(CompileWorker pid=1938380)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 3584, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.993219047619047
+[2m[36m(CompileWorker pid=1938381)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=1938390)[0m  tensor (Large latency) dimensions: (1, 4096, 1024, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.4355504761904763
+[2m[36m(CompileWorker pid=1938381)[0m  tensor (Large latency) dimensions: (1, 4096, 3584, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938387)[0m compiled for stage:4 name: stage_0_2_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1938388)[0m compiled for stage:3 name: stage_0_1_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1938380)[0m  tensor (Large latency) dimensions: (1, 4096, 1024, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.4355504761904763
+[2m[36m(CompileWorker pid=1938389)[0m  tensor (Large latency) dimensions: (1, 4096, 1024, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.4355504761904763
+[2m[36m(CompileWorker pid=1938385)[0m compiled for stage:6 name: stage_0_3_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1938388)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 8000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 11.546819047619048
+[2m[36m(CompileWorker pid=1938391)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.2483047619047618
+[2m[36m(CompileWorker pid=1938390)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.2483047619047618
+[2m[36m(CompileWorker pid=1938387)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 8000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 11.546819047619048
+[2m[36m(CompileWorker pid=1938381)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 3584, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.993219047619047
+[2m[36m(CompileWorker pid=1938385)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 8000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 11.546819047619048
+[2m[36m(CompileWorker pid=1938390)[0m  tensor (Large latency) dimensions: (1, 4096, 3584, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938380)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.2483047619047618
+[2m[36m(CompileWorker pid=1938380)[0m compiled for stage:11 name: stage_1_1_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1938388)[0m  tensor (Large latency) dimensions: (1, 4096, 1024, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.4355504761904763
+[2m[36m(CompileWorker pid=1938381)[0m  tensor (Large latency) dimensions: (1, 4096, 1024, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.4355504761904763
+[2m[36m(CompileWorker pid=1938391)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.369066666666667
+[2m[36m(CompileWorker pid=1938389)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.2483047619047618
+[2m[36m(CompileWorker pid=1938386)[0m compiled for stage:5 name: stage_0_2_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1938384)[0m compiled for stage:7 name: stage_0_3_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1938387)[0m  tensor (Large latency) dimensions: (1, 4096, 1024, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.4355504761904763
+[2m[36m(CompileWorker pid=1938383)[0m compiled for stage:8 name: stage_0_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1938380)[0m  tensor (Large latency) dimensions: (1, 1024, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.4355504761904763
+[2m[36m(CompileWorker pid=1938390)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 3584, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.993219047619047
+[2m[36m(CompileWorker pid=1938390)[0m compiled for stage:1 name: stage_0_0_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1938391)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=1938391)[0m compiled for stage:0 name: stage_0_0_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1938385)[0m  tensor (Large latency) dimensions: (1, 4096, 1024, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.4355504761904763
+[2m[36m(CompileWorker pid=1938386)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 8000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 11.546819047619048
+[2m[36m(CompileWorker pid=1938384)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 8000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 11.546819047619048
+[2m[36m(CompileWorker pid=1938389)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.369066666666667
+[2m[36m(CompileWorker pid=1938391)[0m  tensor (Large latency) dimensions: (1, 1024, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.4355504761904763
+[2m[36m(CompileWorker pid=1938383)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 8000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 11.546819047619048
+[2m[36m(CompileWorker pid=1938390)[0m  tensor (Large latency) dimensions: (1, 1024, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.4355504761904763
+[2m[36m(CompileWorker pid=1938388)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.2483047619047618
+[2m[36m(CompileWorker pid=1938381)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.2483047619047618
+[2m[36m(CompileWorker pid=1938381)[0m compiled for stage:10 name: stage_1_1_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1938389)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=1938389)[0m compiled for stage:2 name: stage_0_1_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1938386)[0m  tensor (Large latency) dimensions: (1, 4096, 1024, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.4355504761904763
+[2m[36m(CompileWorker pid=1938384)[0m  tensor (Large latency) dimensions: (1, 4096, 1024, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.4355504761904763
+[2m[36m(CompileWorker pid=1938388)[0m  tensor (Large latency) dimensions: (1, 4096, 3584, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938387)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.2483047619047618
+[2m[36m(CompileWorker pid=1938382)[0m compiled for stage:9 name: stage_0_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1938381)[0m  tensor (Large latency) dimensions: (1, 1024, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.4355504761904763
+[2m[36m(CompileWorker pid=1938389)[0m  tensor (Large latency) dimensions: (1, 1024, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.4355504761904763
+[2m[36m(CompileWorker pid=1938385)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.2483047619047618
+[2m[36m(CompileWorker pid=1938383)[0m  tensor (Large latency) dimensions: (1, 4096, 1024, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.4355504761904763
+[2m[36m(CompileWorker pid=1938380)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938382)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 8000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 11.546819047619048
+[2m[36m(CompileWorker pid=1938388)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 3584, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.993219047619047
+[2m[36m(CompileWorker pid=1938388)[0m compiled for stage:3 name: stage_0_1_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1938387)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.369066666666667
+[2m[36m(CompileWorker pid=1938390)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938386)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.2483047619047618
+[2m[36m(CompileWorker pid=1938391)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938385)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.369066666666667
+[2m[36m(CompileWorker pid=1938384)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.2483047619047618
+[2m[36m(CompileWorker pid=1938387)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=1938380)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938388)[0m  tensor (Large latency) dimensions: (1, 1024, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.4355504761904763
+[2m[36m(CompileWorker pid=1938381)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938382)[0m  tensor (Large latency) dimensions: (1, 4096, 1024, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.4355504761904763
+[2m[36m(CompileWorker pid=1938386)[0m  tensor (Large latency) dimensions: (1, 4096, 3584, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938385)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=1938390)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938391)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938384)[0m  tensor (Large latency) dimensions: (1, 4096, 3584, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938380)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.369066666666667
+[2m[36m(CompileWorker pid=1938383)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.2483047619047618
+[2m[36m(CompileWorker pid=1938381)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938391)[0m  tensor (Large latency) dimensions: (1, 14336, 1024, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938387)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=1938380)[0m  tensor (Large latency) dimensions: (1, 1024, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 18.131626666666666
+[2m[36m(CompileWorker pid=1938389)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938390)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.369066666666667
+[2m[36m(CompileWorker pid=1938386)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 3584, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.993219047619047
+[2m[36m(CompileWorker pid=1938386)[0m compiled for stage:5 name: stage_0_2_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1938384)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 3584, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.993219047619047
+[2m[36m(CompileWorker pid=1938385)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=1938384)[0m compiled for stage:7 name: stage_0_3_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1938385)[0m compiled for stage:6 name: stage_0_3_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1938380)[0m  tensor (Large latency) dimensions: (1, 4096, 3584, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938391)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=1938387)[0m  tensor (Large latency) dimensions: (1, 4096, 3584, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938381)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.369066666666667
+[2m[36m(CompileWorker pid=1938390)[0m  tensor (Large latency) dimensions: (1, 1024, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 18.131626666666666
+[2m[36m(CompileWorker pid=1938389)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938388)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938391)[0m  tensor (Large latency) dimensions: (1, 1024, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938383)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.369066666666667
+[2m[36m(CompileWorker pid=1938381)[0m  tensor (Large latency) dimensions: (1, 1024, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 18.131626666666666
+[2m[36m(CompileWorker pid=1938385)[0m  tensor (Large latency) dimensions: (1, 1024, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.4355504761904763
+[2m[36m(CompileWorker pid=1938380)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938382)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.2483047619047618
+[2m[36m(CompileWorker pid=1938390)[0m  tensor (Large latency) dimensions: (1, 4096, 3584, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938384)[0m  tensor (Large latency) dimensions: (1, 1024, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.4355504761904763
+[2m[36m(CompileWorker pid=1938386)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.369066666666667
+[2m[36m(CompileWorker pid=1938389)[0m  tensor (Large latency) dimensions: (1, 14336, 1024, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938387)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 3584, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.993219047619047
+[2m[36m(CompileWorker pid=1938387)[0m compiled for stage:4 name: stage_0_2_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1938381)[0m  tensor (Large latency) dimensions: (1, 4096, 3584, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938383)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=1938391)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938388)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938390)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938382)[0m  tensor (Large latency) dimensions: (1, 4096, 3584, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938381)[0m  tensor (Large latency) dimensions: (1, 14336, 1024, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938386)[0m  tensor (Large latency) dimensions: (1, 1024, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 18.131626666666666
+[2m[36m(CompileWorker pid=1938389)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=1938391)[0m  tensor (Large latency) dimensions: (1, 8000, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 11.308860952380952
+[2m[36m(CompileWorker pid=1938390)[0m  tensor (Large latency) dimensions: (1, 8000, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 11.308860952380952
+[2m[36m(CompileWorker pid=1938387)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.369066666666667
+[2m[36m(CompileWorker pid=1938381)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=1938386)[0m  tensor (Large latency) dimensions: (1, 4096, 3584, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938388)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.369066666666667
+[2m[36m(CompileWorker pid=1938389)[0m  tensor (Large latency) dimensions: (1, 1024, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938383)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=1938383)[0m compiled for stage:8 name: stage_0_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1938380)[0m compiled for stage:12 name: stage_1_2_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1938381)[0m  tensor (Large latency) dimensions: (1, 1024, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938382)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 3584, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.993219047619047
+[2m[36m(CompileWorker pid=1938388)[0m  tensor (Large latency) dimensions: (1, 1024, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 18.131626666666666
+[2m[36m(CompileWorker pid=1938382)[0m compiled for stage:9 name: stage_0_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1938387)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=1938386)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938389)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938384)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938385)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938388)[0m  tensor (Large latency) dimensions: (1, 4096, 3584, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938380)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.369066666666667
+[2m[36m(CompileWorker pid=1938381)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938389)[0m  tensor (Large latency) dimensions: (1, 8000, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 11.308860952380952
+[2m[36m(CompileWorker pid=1938383)[0m  tensor (Large latency) dimensions: (1, 14336, 1024, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938387)[0m  tensor (Large latency) dimensions: (1, 4096, 3584, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938386)[0m  tensor (Large latency) dimensions: (1, 1024, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.4355504761904763
+[2m[36m(CompileWorker pid=1938391)[0m compiled for stage:13 name: stage_1_2_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1938390)[0m compiled for stage:14 name: stage_1_3_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1938380)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=1938380)[0m compiled for stage:12 name: stage_1_2_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1938388)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938384)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938381)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938382)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.369066666666667
+[2m[36m(CompileWorker pid=1938391)[0m  tensor (Large latency) dimensions: (1, 4096, 3584, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938385)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938383)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=1938387)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938380)[0m  tensor (Large latency) dimensions: (1, 14336, 1024, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938388)[0m  tensor (Large latency) dimensions: (1, 8000, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 11.308860952380952
+[2m[36m(CompileWorker pid=1938390)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.369066666666667
+[2m[36m(CompileWorker pid=1938391)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 3584, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.993219047619047
+[2m[36m(CompileWorker pid=1938385)[0m  tensor (Large latency) dimensions: (1, 14336, 1024, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938391)[0m compiled for stage:13 name: stage_1_2_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1938382)[0m  tensor (Large latency) dimensions: (1, 1024, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 18.131626666666666
+[2m[36m(CompileWorker pid=1938387)[0m  tensor (Large latency) dimensions: (1, 1024, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.4355504761904763
+[2m[36m(CompileWorker pid=1938390)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=1938390)[0m compiled for stage:14 name: stage_1_3_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1938380)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=1938384)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.369066666666667
+[2m[36m(CompileWorker pid=1938383)[0m  tensor (Large latency) dimensions: (1, 1024, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938380)[0m  tensor (Large latency) dimensions: (1, 1024, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938390)[0m  tensor (Large latency) dimensions: (1, 14336, 1024, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938385)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=1938384)[0m  tensor (Large latency) dimensions: (1, 1024, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 18.131626666666666
+[2m[36m(CompileWorker pid=1938382)[0m  tensor (Large latency) dimensions: (1, 4096, 3584, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938389)[0m compiled for stage:15 name: stage_1_3_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1938383)[0m  tensor (Large latency) dimensions: (1, 4096, 3584, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938391)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.369066666666667
+[2m[36m(CompileWorker pid=1938386)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938380)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938390)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=1938384)[0m  tensor (Large latency) dimensions: (1, 4096, 3584, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938385)[0m  tensor (Large latency) dimensions: (1, 1024, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938389)[0m  tensor (Large latency) dimensions: (1, 4096, 3584, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938391)[0m  tensor (Large latency) dimensions: (1, 1024, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 18.131626666666666
+[2m[36m(CompileWorker pid=1938390)[0m  tensor (Large latency) dimensions: (1, 1024, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938391)[0m  tensor (Large latency) dimensions: (1, 4096, 3584, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938382)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938386)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938380)[0m compiled for stage:18 name: stage_2_2_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1938389)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 3584, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.993219047619047
+[2m[36m(CompileWorker pid=1938389)[0m compiled for stage:15 name: stage_1_3_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1938387)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938381)[0m compiled for stage:16 name: stage_1_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1938383)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938385)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938381)[0m compiled for stage:16 name: stage_1_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1938384)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938386)[0m  tensor (Large latency) dimensions: (1, 8000, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 11.308860952380952
+[2m[36m(CompileWorker pid=1938390)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938380)[0m  tensor (Large latency) dimensions: (1, 1024, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938380)[0m compiled for stage:18 name: stage_2_2_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1938384)[0m  tensor (Large latency) dimensions: (1, 8000, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 11.308860952380952
+[2m[36m(CompileWorker pid=1938391)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938382)[0m  tensor (Large latency) dimensions: (1, 1024, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.4355504761904763
+[2m[36m(CompileWorker pid=1938385)[0m  tensor (Large latency) dimensions: (1, 4096, 3584, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938389)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.369066666666667
+[2m[36m(CompileWorker pid=1938387)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938386)[0m compiled for stage:19 name: stage_2_2_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1938383)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938388)[0m compiled for stage:17 name: stage_1_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1938380)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.369066666666667
+[2m[36m(CompileWorker pid=1938388)[0m compiled for stage:17 name: stage_1_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1938381)[0m compiled for stage:20 name: stage_2_3_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1938390)[0m compiled for stage:21 name: stage_2_3_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1938389)[0m  tensor (Large latency) dimensions: (1, 1024, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 18.131626666666666
+[2m[36m(CompileWorker pid=1938390)[0m compiled for stage:21 name: stage_2_3_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1938388)[0m compiled for stage:24 name: stage_3_3_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1938385)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938386)[0m  tensor (Large latency) dimensions: (1, 1024, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938390)[0m compiled for stage:25 name: stage_3_3_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1938388)[0m compiled for stage:24 name: stage_3_3_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1938390)[0m compiled for stage:25 name: stage_3_3_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1938387)[0m  tensor (Large latency) dimensions: (1, 14336, 1024, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938380)[0m  tensor (Large latency) dimensions: (1, 1024, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.4355504761904763
+[2m[36m(CompileWorker pid=1938389)[0m  tensor (Large latency) dimensions: (1, 4096, 3584, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938383)[0m  tensor (Large latency) dimensions: (1, 1024, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.4355504761904763
+[2m[36m(CompileWorker pid=1938386)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=1938386)[0m compiled for stage:19 name: stage_2_2_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1938385)[0m  tensor (Large latency) dimensions: (1, 8000, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 11.308860952380952
+[2m[36m(CompileWorker pid=1938384)[0m compiled for stage:22 name: stage_2_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1938381)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=1938381)[0m compiled for stage:20 name: stage_2_3_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1938387)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=1938388)[0m compiled for stage:26 name: stage_3_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1938390)[0m compiled for stage:27 name: stage_3_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1938390)[0m compiled for stage:27 name: stage_3_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1938389)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938385)[0m compiled for stage:28 name: stage_4_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1938391)[0m compiled for stage:23 name: stage_2_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1938391)[0m compiled for stage:23 name: stage_2_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1938387)[0m  tensor (Large latency) dimensions: (1, 1024, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938386)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.369066666666667
+[2m[36m(CompileWorker pid=1938381)[0m compiled for stage:29 name: stage_4_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1938384)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.369066666666667
+[2m[36m(CompileWorker pid=1938388)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.369066666666667
+[2m[36m(CompileWorker pid=1938385)[0m  tensor (Large latency) dimensions: (1, 1024, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938385)[0m compiled for stage:28 name: stage_4_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1938382)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938386)[0m  tensor (Large latency) dimensions: (1, 1024, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.4355504761904763
+[2m[36m(CompileWorker pid=1938388)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=1938388)[0m compiled for stage:26 name: stage_3_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1938384)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=1938384)[0m compiled for stage:22 name: stage_2_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1938387)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938381)[0m  tensor (Large latency) dimensions: (1, 1024, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938381)[0m compiled for stage:29 name: stage_4_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1938387)[0m  tensor (Large latency) dimensions: (1, 8000, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 11.308860952380952
+[2m[36m(CompileWorker pid=1938388)[0m  tensor (Large latency) dimensions: (1, 14336, 1024, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938385)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.369066666666667
+[2m[36m(CompileWorker pid=1938384)[0m  tensor (Large latency) dimensions: (1, 14336, 1024, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938382)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938381)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.369066666666667
+[2m[36m(CompileWorker pid=1938383)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938388)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=1938385)[0m  tensor (Large latency) dimensions: (1, 1024, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 18.131626666666666
+[2m[36m(CompileWorker pid=1938384)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=1938382)[0m  tensor (Large latency) dimensions: (1, 8000, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 11.308860952380952
+[2m[36m(CompileWorker pid=1938381)[0m  tensor (Large latency) dimensions: (1, 1024, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.4355504761904763
+[2m[36m(CompileWorker pid=1938388)[0m  tensor (Large latency) dimensions: (1, 1024, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938384)[0m  tensor (Large latency) dimensions: (1, 1024, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.024426666666667
+[2m[36m(CompileWorker pid=1938385)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 1024, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 4.369066666666667
+[2m[36m(CompileWorker pid=1938383)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938388)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1938383)[0m  tensor (Large latency) dimensions: (1, 8000, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 11.308860952380952
+[2m[36m(CompileWorker pid=1938385)[0m  tensor (Large latency) dimensions: (1, 1024, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.4355504761904763
+[2m[36m(CompileWorker pid=1938384)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+- parse estimation results for all stages
+Using pre computed peak Mem for (0, 0, 2, 0), module 0
+result[(0, 0, 2, 0), 0] = ModuleProfileResult(compute_cost=354.686, peak_memory=3.400 GB, invar_size=0.756 GB, outvar_size=10.148 GB, temp_buffer_size=-7.504 GB, available_memory=64.000 GB, comm_cost=2.414)
+Using pre computed peak Mem for (0, 0, 2, 0), module 1
+result[(0, 0, 2, 0), 1] = ModuleProfileResult(compute_cost=880.525, peak_memory=3.900 GB, invar_size=9.904 GB, outvar_size=0.756 GB, temp_buffer_size=-6.004 GB, available_memory=64.000 GB, comm_cost=6.668)
+result[(0, 0, 2, 1), 0] = ModuleProfileResult(compute_cost=196.924, peak_memory=8.779 GB, invar_size=1.413 GB, outvar_size=6.867 GB, temp_buffer_size=0.500 GB, available_memory=64.000 GB, comm_cost=0.628)
+result[(0, 0, 2, 1), 1] = ModuleProfileResult(compute_cost=430.822, peak_memory=8.777 GB, invar_size=7.279 GB, outvar_size=1.413 GB, temp_buffer_size=1.498 GB, available_memory=64.000 GB, comm_cost=3.921)
+Using pre computed peak Mem for (0, 1, 2, 0), module 0
+result[(0, 1, 2, 0), 0] = ModuleProfileResult(compute_cost=667.037, peak_memory=6.800 GB, invar_size=1.432 GB, outvar_size=18.074 GB, temp_buffer_size=-12.706 GB, available_memory=64.000 GB, comm_cost=4.386)
+Using pre computed peak Mem for (0, 1, 2, 0), module 1
+result[(0, 1, 2, 0), 1] = ModuleProfileResult(compute_cost=1721.850, peak_memory=7.800 GB, invar_size=18.506 GB, outvar_size=1.432 GB, temp_buffer_size=-10.706 GB, available_memory=64.000 GB, comm_cost=13.274)
+result[(0, 1, 2, 1), 0] = ModuleProfileResult(compute_cost=351.513, peak_memory=14.756 GB, invar_size=2.745 GB, outvar_size=11.512 GB, temp_buffer_size=0.500 GB, available_memory=64.000 GB, comm_cost=0.813)
+result[(0, 1, 2, 1), 1] = ModuleProfileResult(compute_cost=822.446, peak_memory=16.583 GB, invar_size=13.256 GB, outvar_size=2.745 GB, temp_buffer_size=3.326 GB, available_memory=64.000 GB, comm_cost=7.780)
+Using pre computed peak Mem for (0, 2, 2, 0), module 0
+result[(0, 2, 2, 0), 0] = ModuleProfileResult(compute_cost=835.270, peak_memory=10.200 GB, invar_size=2.745 GB, outvar_size=21.621 GB, temp_buffer_size=-14.166 GB, available_memory=64.000 GB, comm_cost=4.908)
+Using pre computed peak Mem for (0, 2, 2, 0), module 1
+result[(0, 2, 2, 0), 1] = ModuleProfileResult(compute_cost=2521.979, peak_memory=11.700 GB, invar_size=23.366 GB, outvar_size=2.745 GB, temp_buffer_size=-11.666 GB, available_memory=64.000 GB, comm_cost=18.185)
+result[(0, 2, 2, 1), 0] = ModuleProfileResult(compute_cost=487.932, peak_memory=19.616 GB, invar_size=4.057 GB, outvar_size=15.059 GB, temp_buffer_size=0.500 GB, available_memory=64.000 GB, comm_cost=0.979)
+result[(0, 2, 2, 1), 1] = ModuleProfileResult(compute_cost=1186.191, peak_memory=22.892 GB, invar_size=18.116 GB, outvar_size=4.057 GB, temp_buffer_size=4.775 GB, available_memory=64.000 GB, comm_cost=11.467)
+Using pre computed peak Mem for (0, 3, 2, 0), module 0
+result[(0, 3, 2, 0), 0] = ModuleProfileResult(compute_cost=1074.957, peak_memory=13.600 GB, invar_size=2.108 GB, outvar_size=25.063 GB, temp_buffer_size=-13.571 GB, available_memory=64.000 GB, comm_cost=7.430)
+Using pre computed peak Mem for (0, 3, 2, 0), module 1
+result[(0, 3, 2, 0), 1] = ModuleProfileResult(compute_cost=2562.222, peak_memory=15.600 GB, invar_size=27.171 GB, outvar_size=2.108 GB, temp_buffer_size=-11.571 GB, available_memory=64.000 GB, comm_cost=18.801)
+result[(0, 3, 2, 1), 0] = ModuleProfileResult(compute_cost=506.228, peak_memory=19.796 GB, invar_size=4.077 GB, outvar_size=15.219 GB, temp_buffer_size=0.500 GB, available_memory=64.000 GB, comm_cost=0.999)
+result[(0, 3, 2, 1), 1] = ModuleProfileResult(compute_cost=1214.194, peak_memory=23.550 GB, invar_size=19.296 GB, outvar_size=4.077 GB, temp_buffer_size=4.254 GB, available_memory=64.000 GB, comm_cost=11.640)
+Using pre computed peak Mem for (0, 4, 2, 0), module 0
+result[(0, 4, 2, 0), 0] = ModuleProfileResult(compute_cost=1449.298, peak_memory=17.000 GB, invar_size=2.764 GB, outvar_size=31.954 GB, temp_buffer_size=-17.718 GB, available_memory=64.000 GB, comm_cost=10.274)
+Using pre computed peak Mem for (0, 4, 2, 0), module 1
+result[(0, 4, 2, 0), 1] = ModuleProfileResult(compute_cost=3375.630, peak_memory=19.500 GB, invar_size=34.718 GB, outvar_size=2.764 GB, temp_buffer_size=-15.218 GB, available_memory=64.000 GB, comm_cost=24.447)
+result[(0, 4, 2, 1), 0] = ModuleProfileResult(compute_cost=643.271, peak_memory=24.718 GB, invar_size=5.389 GB, outvar_size=18.829 GB, temp_buffer_size=0.500 GB, available_memory=64.000 GB, comm_cost=1.164)
+result[(0, 4, 2, 1), 1] = ModuleProfileResult(compute_cost=1578.798, peak_memory=29.843 GB, invar_size=24.218 GB, outvar_size=5.389 GB, temp_buffer_size=5.625 GB, available_memory=64.000 GB, comm_cost=15.437)
+Using pre computed peak Mem for (1, 1, 2, 0), module 0
+result[(1, 1, 2, 0), 0] = ModuleProfileResult(compute_cost=174.679, peak_memory=3.400 GB, invar_size=2.313 GB, outvar_size=5.055 GB, temp_buffer_size=-3.968 GB, available_memory=64.000 GB, comm_cost=0.810)
+Using pre computed peak Mem for (1, 1, 2, 0), module 1
+result[(1, 1, 2, 0), 1] = ModuleProfileResult(compute_cost=447.836, peak_memory=3.900 GB, invar_size=6.368 GB, outvar_size=1.313 GB, temp_buffer_size=-2.530 GB, available_memory=64.000 GB, comm_cost=4.203)
+result[(1, 1, 2, 1), 0] = ModuleProfileResult(compute_cost=154.959, peak_memory=7.540 GB, invar_size=2.395 GB, outvar_size=4.645 GB, temp_buffer_size=0.500 GB, available_memory=64.000 GB, comm_cost=0.586)
+result[(1, 1, 2, 1), 1] = ModuleProfileResult(compute_cost=391.623, peak_memory=7.574 GB, invar_size=6.040 GB, outvar_size=1.395 GB, temp_buffer_size=1.472 GB, available_memory=64.000 GB, comm_cost=3.859)
+Using pre computed peak Mem for (1, 2, 2, 0), module 0
+result[(1, 2, 2, 0), 0] = ModuleProfileResult(compute_cost=311.098, peak_memory=6.800 GB, invar_size=3.625 GB, outvar_size=8.602 GB, temp_buffer_size=-5.428 GB, available_memory=64.000 GB, comm_cost=0.975)
+Using pre computed peak Mem for (1, 2, 2, 0), module 1
+result[(1, 2, 2, 0), 1] = ModuleProfileResult(compute_cost=811.581, peak_memory=7.800 GB, invar_size=11.227 GB, outvar_size=2.625 GB, temp_buffer_size=-3.490 GB, available_memory=64.000 GB, comm_cost=7.890)
+result[(1, 2, 2, 1), 0] = ModuleProfileResult(compute_cost=291.377, peak_memory=12.399 GB, invar_size=3.707 GB, outvar_size=8.192 GB, temp_buffer_size=0.500 GB, available_memory=64.000 GB, comm_cost=0.752)
+result[(1, 2, 2, 1), 1] = ModuleProfileResult(compute_cost=755.368, peak_memory=14.099 GB, invar_size=10.899 GB, outvar_size=2.707 GB, temp_buffer_size=3.137 GB, available_memory=64.000 GB, comm_cost=7.546)
+Using pre computed peak Mem for (1, 3, 2, 0), module 0
+result[(1, 3, 2, 0), 0] = ModuleProfileResult(compute_cost=329.393, peak_memory=10.200 GB, invar_size=3.645 GB, outvar_size=9.763 GB, temp_buffer_size=-3.208 GB, available_memory=64.000 GB, comm_cost=0.995)
+Using pre computed peak Mem for (1, 3, 2, 0), module 1
+result[(1, 3, 2, 0), 1] = ModuleProfileResult(compute_cost=839.585, peak_memory=11.700 GB, invar_size=12.408 GB, outvar_size=2.645 GB, temp_buffer_size=-0.770 GB, available_memory=64.000 GB, comm_cost=8.062)
+result[(1, 3, 2, 1), 0] = ModuleProfileResult(compute_cost=309.673, peak_memory=13.579 GB, invar_size=3.727 GB, outvar_size=9.353 GB, temp_buffer_size=0.500 GB, available_memory=64.000 GB, comm_cost=0.772)
+result[(1, 3, 2, 1), 1] = ModuleProfileResult(compute_cost=783.372, peak_memory=14.935 GB, invar_size=12.079 GB, outvar_size=2.727 GB, temp_buffer_size=2.793 GB, available_memory=64.000 GB, comm_cost=7.718)
+Using pre computed peak Mem for (1, 4, 2, 0), module 0
+result[(1, 4, 2, 0), 0] = ModuleProfileResult(compute_cost=466.436, peak_memory=13.600 GB, invar_size=4.957 GB, outvar_size=13.373 GB, temp_buffer_size=-4.730 GB, available_memory=64.000 GB, comm_cost=1.161)
+Using pre computed peak Mem for (1, 4, 2, 0), module 1
+result[(1, 4, 2, 0), 1] = ModuleProfileResult(compute_cost=1204.189, peak_memory=15.600 GB, invar_size=17.330 GB, outvar_size=3.957 GB, temp_buffer_size=-1.792 GB, available_memory=64.000 GB, comm_cost=11.859)
+result[(1, 4, 2, 1), 0] = ModuleProfileResult(compute_cost=446.716, peak_memory=18.502 GB, invar_size=5.039 GB, outvar_size=12.963 GB, temp_buffer_size=0.500 GB, available_memory=64.000 GB, comm_cost=0.937)
+result[(1, 4, 2, 1), 1] = ModuleProfileResult(compute_cost=1147.976, peak_memory=21.494 GB, invar_size=17.002 GB, outvar_size=4.039 GB, temp_buffer_size=4.430 GB, available_memory=64.000 GB, comm_cost=11.516)
+Using pre computed peak Mem for (2, 2, 2, 0), module 0
+result[(2, 2, 2, 0), 0] = ModuleProfileResult(compute_cost=271.679, peak_memory=3.400 GB, invar_size=2.195 GB, outvar_size=5.352 GB, temp_buffer_size=-4.147 GB, available_memory=64.000 GB, comm_cost=2.091)
+result[(2, 2, 2, 0), 1] = ModuleProfileResult(compute_cost=395.933, peak_memory=9.703 GB, invar_size=7.500 GB, outvar_size=2.148 GB, temp_buffer_size=2.188 GB, available_memory=64.000 GB, comm_cost=5.167)
+Using pre computed peak Mem for (2, 2, 2, 1), module 0
+result[(2, 2, 2, 1), 0] = ModuleProfileResult(compute_cost=264.258, peak_memory=3.400 GB, invar_size=2.688 GB, outvar_size=4.485 GB, temp_buffer_size=-3.772 GB, available_memory=64.000 GB, comm_cost=2.206)
+result[(2, 2, 2, 1), 1] = ModuleProfileResult(compute_cost=286.809, peak_memory=9.891 GB, invar_size=7.125 GB, outvar_size=2.641 GB, temp_buffer_size=2.750 GB, available_memory=64.000 GB, comm_cost=5.254)
+Using pre computed peak Mem for (2, 3, 2, 0), module 0
+result[(2, 3, 2, 0), 0] = ModuleProfileResult(compute_cost=206.619, peak_memory=6.800 GB, invar_size=2.313 GB, outvar_size=5.118 GB, temp_buffer_size=-0.630 GB, available_memory=64.000 GB, comm_cost=1.167)
+result[(2, 3, 2, 0), 1] = ModuleProfileResult(compute_cost=447.602, peak_memory=8.087 GB, invar_size=6.430 GB, outvar_size=1.313 GB, temp_buffer_size=1.594 GB, available_memory=64.000 GB, comm_cost=3.843)
+result[(2, 3, 2, 1), 0] = ModuleProfileResult(compute_cost=155.084, peak_memory=7.602 GB, invar_size=2.395 GB, outvar_size=4.708 GB, temp_buffer_size=0.500 GB, available_memory=64.000 GB, comm_cost=0.586)
+result[(2, 3, 2, 1), 1] = ModuleProfileResult(compute_cost=391.748, peak_memory=7.758 GB, invar_size=6.102 GB, outvar_size=1.395 GB, temp_buffer_size=1.594 GB, available_memory=64.000 GB, comm_cost=3.859)
+Using pre computed peak Mem for (2, 4, 2, 0), module 0
+result[(2, 4, 2, 0), 0] = ModuleProfileResult(compute_cost=311.847, peak_memory=10.200 GB, invar_size=3.625 GB, outvar_size=8.728 GB, temp_buffer_size=-2.153 GB, available_memory=64.000 GB, comm_cost=0.975)
+Using pre computed peak Mem for (2, 4, 2, 0), module 1
+result[(2, 4, 2, 0), 1] = ModuleProfileResult(compute_cost=812.565, peak_memory=11.700 GB, invar_size=11.353 GB, outvar_size=2.625 GB, temp_buffer_size=0.285 GB, available_memory=64.000 GB, comm_cost=8.000)
+result[(2, 4, 2, 1), 0] = ModuleProfileResult(compute_cost=292.127, peak_memory=12.524 GB, invar_size=3.707 GB, outvar_size=8.317 GB, temp_buffer_size=0.500 GB, available_memory=64.000 GB, comm_cost=0.752)
+result[(2, 4, 2, 1), 1] = ModuleProfileResult(compute_cost=756.353, peak_memory=14.224 GB, invar_size=11.024 GB, outvar_size=2.707 GB, temp_buffer_size=3.137 GB, available_memory=64.000 GB, comm_cost=7.657)
+result[(3, 3, 2, 0), 0] = ModuleProfileResult(compute_cost=18.296, peak_memory=2.744 GB, invar_size=1.082 GB, outvar_size=1.160 GB, temp_buffer_size=0.502 GB, available_memory=64.000 GB, comm_cost=0.021)
+result[(3, 3, 2, 0), 1] = ModuleProfileResult(compute_cost=27.893, peak_memory=2.063 GB, invar_size=1.243 GB, outvar_size=0.082 GB, temp_buffer_size=0.758 GB, available_memory=64.000 GB, comm_cost=0.062)
+result[(3, 3, 2, 1), 0] = ModuleProfileResult(compute_cost=18.296, peak_memory=2.744 GB, invar_size=1.082 GB, outvar_size=1.160 GB, temp_buffer_size=0.502 GB, available_memory=64.000 GB, comm_cost=0.021)
+result[(3, 3, 2, 1), 1] = ModuleProfileResult(compute_cost=27.893, peak_memory=2.063 GB, invar_size=1.243 GB, outvar_size=0.082 GB, temp_buffer_size=0.758 GB, available_memory=64.000 GB, comm_cost=0.062)
+Using pre computed peak Mem for (3, 4, 2, 0), module 0
+result[(3, 4, 2, 0), 0] = ModuleProfileResult(compute_cost=313.470, peak_memory=6.800 GB, invar_size=1.738 GB, outvar_size=8.051 GB, temp_buffer_size=-2.990 GB, available_memory=64.000 GB, comm_cost=2.373)
+Using pre computed peak Mem for (3, 4, 2, 0), module 1
+result[(3, 4, 2, 0), 1] = ModuleProfileResult(compute_cost=842.200, peak_memory=7.800 GB, invar_size=8.790 GB, outvar_size=0.738 GB, temp_buffer_size=-1.052 GB, available_memory=64.000 GB, comm_cost=6.606)
+result[(3, 4, 2, 1), 0] = ModuleProfileResult(compute_cost=155.708, peak_memory=7.665 GB, invar_size=2.395 GB, outvar_size=4.770 GB, temp_buffer_size=0.500 GB, available_memory=64.000 GB, comm_cost=0.586)
+result[(3, 4, 2, 1), 1] = ModuleProfileResult(compute_cost=392.497, peak_memory=7.605 GB, invar_size=6.165 GB, outvar_size=1.395 GB, temp_buffer_size=1.378 GB, available_memory=64.000 GB, comm_cost=3.859)
+Using pre computed peak Mem for (4, 4, 2, 0), module 0
+result[(4, 4, 2, 0), 0] = ModuleProfileResult(compute_cost=272.303, peak_memory=3.400 GB, invar_size=2.195 GB, outvar_size=5.414 GB, temp_buffer_size=-4.210 GB, available_memory=64.000 GB, comm_cost=2.091)
+result[(4, 4, 2, 0), 1] = ModuleProfileResult(compute_cost=396.772, peak_memory=9.704 GB, invar_size=7.610 GB, outvar_size=2.148 GB, temp_buffer_size=2.078 GB, available_memory=64.000 GB, comm_cost=5.163)
+Using pre computed peak Mem for (4, 4, 2, 1), module 0
+result[(4, 4, 2, 1), 0] = ModuleProfileResult(compute_cost=279.927, peak_memory=3.400 GB, invar_size=1.703 GB, outvar_size=5.907 GB, temp_buffer_size=-4.210 GB, available_memory=64.000 GB, comm_cost=2.178)
+result[(4, 4, 2, 1), 1] = ModuleProfileResult(compute_cost=505.896, peak_memory=9.047 GB, invar_size=7.610 GB, outvar_size=1.656 GB, temp_buffer_size=1.422 GB, available_memory=64.000 GB, comm_cost=5.076)
+Profiling for submesh 2 (1, 4) takes 502.02 seconds
+--------------------------------------------------
+- Profiling for submesh 1 (1, 2):
+- Generate all stage infos (Jaxpr -> HLO)
+- Compile all stages, get estimations
+num of workers:12
+[2m[36m(CompileWorker pid=1971557)[0m compiled for stage:0 name: stage_0_0_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1971547)[0m compiled for stage:10 name: stage_1_1_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1971546)[0m compiled for stage:11 name: stage_1_1_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1971556)[0m compiled for stage:1 name: stage_0_0_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1971555)[0m compiled for stage:2 name: stage_0_1_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1934595)[0m /storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/shard_parallel/auto_sharding.py:880: UserWarning: Detect unexpected behaviors in the auto-sharding pass.
+[2m[36m(CompileWorker pid=1934595)[0m   warnings.warn("Detect unexpected behaviors in the auto-sharding pass.")
+[2m[36m(CompileWorker pid=1934594)[0m /storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/shard_parallel/auto_sharding.py:880: UserWarning: Detect unexpected behaviors in the auto-sharding pass.
+[2m[36m(CompileWorker pid=1934594)[0m   warnings.warn("Detect unexpected behaviors in the auto-sharding pass.")
+[2m[36m(CompileWorker pid=1938391)[0m /storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/shard_parallel/auto_sharding.py:880: UserWarning: Detect unexpected behaviors in the auto-sharding pass.
+[2m[36m(CompileWorker pid=1938391)[0m   warnings.warn("Detect unexpected behaviors in the auto-sharding pass.")
+[2m[36m(CompileWorker pid=1938381)[0m /storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/shard_parallel/auto_sharding.py:880: UserWarning: Detect unexpected behaviors in the auto-sharding pass.
+[2m[36m(CompileWorker pid=1938381)[0m   warnings.warn("Detect unexpected behaviors in the auto-sharding pass.")
+[2m[36m(CompileWorker pid=1938380)[0m /storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/shard_parallel/auto_sharding.py:880: UserWarning: Detect unexpected behaviors in the auto-sharding pass.
+[2m[36m(CompileWorker pid=1938380)[0m   warnings.warn("Detect unexpected behaviors in the auto-sharding pass.")
+[2m[36m(CompileWorker pid=1938390)[0m /storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/shard_parallel/auto_sharding.py:880: UserWarning: Detect unexpected behaviors in the auto-sharding pass.
+[2m[36m(CompileWorker pid=1938390)[0m   warnings.warn("Detect unexpected behaviors in the auto-sharding pass.")
+[2m[36m(CompileWorker pid=1938389)[0m /storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/shard_parallel/auto_sharding.py:880: UserWarning: Detect unexpected behaviors in the auto-sharding pass.
+[2m[36m(CompileWorker pid=1938389)[0m   warnings.warn("Detect unexpected behaviors in the auto-sharding pass.")
+[2m[36m(CompileWorker pid=1938387)[0m /storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/shard_parallel/auto_sharding.py:880: UserWarning: Detect unexpected behaviors in the auto-sharding pass.
+[2m[36m(CompileWorker pid=1938387)[0m   warnings.warn("Detect unexpected behaviors in the auto-sharding pass.")
+[2m[36m(CompileWorker pid=1938388)[0m /storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/shard_parallel/auto_sharding.py:880: UserWarning: Detect unexpected behaviors in the auto-sharding pass.
+[2m[36m(CompileWorker pid=1938388)[0m   warnings.warn("Detect unexpected behaviors in the auto-sharding pass.")
+[2m[36m(CompileWorker pid=1938385)[0m /storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/shard_parallel/auto_sharding.py:880: UserWarning: Detect unexpected behaviors in the auto-sharding pass.
+[2m[36m(CompileWorker pid=1938385)[0m   warnings.warn("Detect unexpected behaviors in the auto-sharding pass.")
+[2m[36m(CompileWorker pid=1938386)[0m /storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/shard_parallel/auto_sharding.py:880: UserWarning: Detect unexpected behaviors in the auto-sharding pass.
+[2m[36m(CompileWorker pid=1938386)[0m   warnings.warn("Detect unexpected behaviors in the auto-sharding pass.")
+[2m[36m(CompileWorker pid=1938384)[0m /storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/shard_parallel/auto_sharding.py:880: UserWarning: Detect unexpected behaviors in the auto-sharding pass.
+[2m[36m(CompileWorker pid=1938384)[0m   warnings.warn("Detect unexpected behaviors in the auto-sharding pass.")
+[2m[36m(CompileWorker pid=1938383)[0m /storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/shard_parallel/auto_sharding.py:880: UserWarning: Detect unexpected behaviors in the auto-sharding pass.
+[2m[36m(CompileWorker pid=1938383)[0m   warnings.warn("Detect unexpected behaviors in the auto-sharding pass.")
+[2m[36m(CompileWorker pid=1938382)[0m /storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/shard_parallel/auto_sharding.py:880: UserWarning: Detect unexpected behaviors in the auto-sharding pass.
+[2m[36m(CompileWorker pid=1938382)[0m   warnings.warn("Detect unexpected behaviors in the auto-sharding pass.")
+[2m[36m(CompileWorker pid=1971547)[0m /storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/shard_parallel/auto_sharding.py:880: UserWarning: Detect unexpected behaviors in the auto-sharding pass.
+[2m[36m(CompileWorker pid=1971547)[0m   warnings.warn("Detect unexpected behaviors in the auto-sharding pass.")
+[2m[36m(CompileWorker pid=1971557)[0m /storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/shard_parallel/auto_sharding.py:880: UserWarning: Detect unexpected behaviors in the auto-sharding pass.
+[2m[36m(CompileWorker pid=1971557)[0m   warnings.warn("Detect unexpected behaviors in the auto-sharding pass.")
+[2m[36m(CompileWorker pid=1971546)[0m /storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/shard_parallel/auto_sharding.py:880: UserWarning: Detect unexpected behaviors in the auto-sharding pass.
+[2m[36m(CompileWorker pid=1971546)[0m   warnings.warn("Detect unexpected behaviors in the auto-sharding pass.")
+[2m[36m(CompileWorker pid=1971556)[0m /storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/shard_parallel/auto_sharding.py:880: UserWarning: Detect unexpected behaviors in the auto-sharding pass.
+[2m[36m(CompileWorker pid=1971556)[0m   warnings.warn("Detect unexpected behaviors in the auto-sharding pass.")
+[2m[36m(CompileWorker pid=1971555)[0m /storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/shard_parallel/auto_sharding.py:880: UserWarning: Detect unexpected behaviors in the auto-sharding pass.
+[2m[36m(CompileWorker pid=1971555)[0m   warnings.warn("Detect unexpected behaviors in the auto-sharding pass.")
+[2m[36m(CompileWorker pid=1971554)[0m /storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/shard_parallel/auto_sharding.py:880: UserWarning: Detect unexpected behaviors in the auto-sharding pass.
+[2m[36m(CompileWorker pid=1971554)[0m   warnings.warn("Detect unexpected behaviors in the auto-sharding pass.")
+[2m[36m(CompileWorker pid=1971553)[0m /storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/shard_parallel/auto_sharding.py:880: UserWarning: Detect unexpected behaviors in the auto-sharding pass.
+[2m[36m(CompileWorker pid=1971553)[0m   warnings.warn("Detect unexpected behaviors in the auto-sharding pass.")
+[2m[36m(CompileWorker pid=1971551)[0m /storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/shard_parallel/auto_sharding.py:880: UserWarning: Detect unexpected behaviors in the auto-sharding pass.
+[2m[36m(CompileWorker pid=1971551)[0m   warnings.warn("Detect unexpected behaviors in the auto-sharding pass.")
+[2m[36m(CompileWorker pid=1971550)[0m /storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/shard_parallel/auto_sharding.py:880: UserWarning: Detect unexpected behaviors in the auto-sharding pass.
+[2m[36m(CompileWorker pid=1971550)[0m   warnings.warn("Detect unexpected behaviors in the auto-sharding pass.")
+[2m[36m(CompileWorker pid=1971549)[0m /storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/shard_parallel/auto_sharding.py:880: UserWarning: Detect unexpected behaviors in the auto-sharding pass.
+[2m[36m(CompileWorker pid=1971549)[0m   warnings.warn("Detect unexpected behaviors in the auto-sharding pass.")
+[2m[36m(CompileWorker pid=1971552)[0m /storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/shard_parallel/auto_sharding.py:880: UserWarning: Detect unexpected behaviors in the auto-sharding pass.
+[2m[36m(CompileWorker pid=1971552)[0m   warnings.warn("Detect unexpected behaviors in the auto-sharding pass.")
+[2m[36m(CompileWorker pid=1971557)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 16000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 23.34329904761905
+[2m[36m(CompileWorker pid=1971556)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 16000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 23.34329904761905
+[2m[36m(CompileWorker pid=1971547)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 9.611946666666666
+[2m[36m(CompileWorker pid=1971546)[0m  tensor (Large latency) dimensions: (1, 4096, 7168, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971547)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=1971546)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 7168, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.236099047619048
+[2m[36m(CompileWorker pid=1971555)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 16000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 23.34329904761905
+[2m[36m(CompileWorker pid=1971554)[0m compiled for stage:3 name: stage_0_1_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1971553)[0m compiled for stage:4 name: stage_0_2_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1971551)[0m compiled for stage:6 name: stage_0_3_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1971557)[0m  tensor (Large latency) dimensions: (1, 4096, 2048, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.8711009523809525
+[2m[36m(CompileWorker pid=1971556)[0m  tensor (Large latency) dimensions: (1, 4096, 2048, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.8711009523809525
+[2m[36m(CompileWorker pid=1971547)[0m  tensor (Large latency) dimensions: (1, 4096, 7168, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971554)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 16000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 23.34329904761905
+[2m[36m(CompileWorker pid=1971546)[0m  tensor (Large latency) dimensions: (1, 4096, 2048, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.8711009523809525
+[2m[36m(CompileWorker pid=1971553)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 16000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 23.34329904761905
+[2m[36m(CompileWorker pid=1971547)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 7168, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.236099047619048
+[2m[36m(CompileWorker pid=1971551)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 16000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 23.34329904761905
+[2m[36m(CompileWorker pid=1971550)[0m compiled for stage:7 name: stage_0_3_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1971555)[0m  tensor (Large latency) dimensions: (1, 4096, 2048, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.8711009523809525
+[2m[36m(CompileWorker pid=1971557)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.7462704761904764
+[2m[36m(CompileWorker pid=1971549)[0m compiled for stage:8 name: stage_0_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1971556)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.7462704761904764
+[2m[36m(CompileWorker pid=1971552)[0m compiled for stage:5 name: stage_0_2_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1971546)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.7462704761904764
+[2m[36m(CompileWorker pid=1971546)[0m compiled for stage:11 name: stage_1_1_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1971550)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 16000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 23.34329904761905
+[2m[36m(CompileWorker pid=1971554)[0m  tensor (Large latency) dimensions: (1, 4096, 2048, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.8711009523809525
+[2m[36m(CompileWorker pid=1971547)[0m  tensor (Large latency) dimensions: (1, 4096, 2048, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.8711009523809525
+[2m[36m(CompileWorker pid=1971557)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 9.611946666666666
+[2m[36m(CompileWorker pid=1971556)[0m  tensor (Large latency) dimensions: (1, 4096, 7168, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971553)[0m  tensor (Large latency) dimensions: (1, 4096, 2048, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.8711009523809525
+[2m[36m(CompileWorker pid=1971555)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.7462704761904764
+[2m[36m(CompileWorker pid=1971549)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 16000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 23.34329904761905
+[2m[36m(CompileWorker pid=1971552)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 16000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 23.34329904761905
+[2m[36m(CompileWorker pid=1971546)[0m  tensor (Large latency) dimensions: (1, 2048, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.8711009523809525
+[2m[36m(CompileWorker pid=1971551)[0m  tensor (Large latency) dimensions: (1, 4096, 2048, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.8711009523809525
+[2m[36m(CompileWorker pid=1971557)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=1971556)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 7168, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.236099047619048
+[2m[36m(CompileWorker pid=1971556)[0m compiled for stage:1 name: stage_0_0_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1971547)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.7462704761904764
+[2m[36m(CompileWorker pid=1971547)[0m compiled for stage:10 name: stage_1_1_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1971550)[0m  tensor (Large latency) dimensions: (1, 4096, 2048, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.8711009523809525
+[2m[36m(CompileWorker pid=1971546)[0m  tensor (Large latency) dimensions: (1, 4096, 2048, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.3731352380952382
+[2m[36m(CompileWorker pid=1971555)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 9.611946666666666
+[2m[36m(CompileWorker pid=1971554)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.7462704761904764
+[2m[36m(CompileWorker pid=1971556)[0m  tensor (Large latency) dimensions: (1, 2048, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.8711009523809525
+[2m[36m(CompileWorker pid=1971557)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=1971548)[0m compiled for stage:9 name: stage_0_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1971557)[0m compiled for stage:0 name: stage_0_0_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1971555)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=1971547)[0m  tensor (Large latency) dimensions: (1, 2048, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.8711009523809525
+[2m[36m(CompileWorker pid=1971553)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.7462704761904764
+[2m[36m(CompileWorker pid=1971552)[0m  tensor (Large latency) dimensions: (1, 4096, 2048, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.8711009523809525
+[2m[36m(CompileWorker pid=1971556)[0m  tensor (Large latency) dimensions: (1, 4096, 2048, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.3731352380952382
+[2m[36m(CompileWorker pid=1971551)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.7462704761904764
+[2m[36m(CompileWorker pid=1971557)[0m  tensor (Large latency) dimensions: (1, 2048, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.8711009523809525
+[2m[36m(CompileWorker pid=1971554)[0m  tensor (Large latency) dimensions: (1, 4096, 7168, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971549)[0m  tensor (Large latency) dimensions: (1, 4096, 2048, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.8711009523809525
+[2m[36m(CompileWorker pid=1971555)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=1971555)[0m compiled for stage:2 name: stage_0_1_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1971554)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 7168, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.236099047619048
+[2m[36m(CompileWorker pid=1971554)[0m compiled for stage:3 name: stage_0_1_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1971547)[0m  tensor (Large latency) dimensions: (1, 4096, 2048, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.3731352380952382
+[2m[36m(CompileWorker pid=1971548)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 16000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 23.34329904761905
+[2m[36m(CompileWorker pid=1971550)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.7462704761904764
+[2m[36m(CompileWorker pid=1971553)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 9.611946666666666
+[2m[36m(CompileWorker pid=1971557)[0m  tensor (Large latency) dimensions: (1, 4096, 2048, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.3731352380952382
+[2m[36m(CompileWorker pid=1971546)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971555)[0m  tensor (Large latency) dimensions: (1, 2048, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.8711009523809525
+[2m[36m(CompileWorker pid=1971551)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=1971552)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.7462704761904764
+[2m[36m(CompileWorker pid=1971552)[0m 
+[2m[36m(CompileWorker pid=1971554)[0m  tensor (Large latency) dimensions: (1, 2048, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.8711009523809525
+[2m[36m(CompileWorker pid=1971550)[0m  tensor (Large latency) dimensions: (1, 4096, 7168, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971556)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971546)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971555)[0m  tensor (Large latency) dimensions: (1, 4096, 2048, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.3731352380952382
+[2m[36m(CompileWorker pid=1971550)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 7168, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.236099047619048
+[2m[36m(CompileWorker pid=1971553)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=1971550)[0m compiled for stage:7 name: stage_0_3_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1971549)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.7462704761904764
+[2m[36m(CompileWorker pid=1971554)[0m  tensor (Large latency) dimensions: (1, 4096, 2048, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.3731352380952382
+[2m[36m(CompileWorker pid=1971552)[0m  tensor (Large latency) dimensions: (1, 4096, 7168, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971551)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 9.611946666666666
+[2m[36m(CompileWorker pid=1971547)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971548)[0m  tensor (Large latency) dimensions: (1, 4096, 2048, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.8711009523809525
+[2m[36m(CompileWorker pid=1971556)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971557)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971553)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=1971546)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 9.611946666666666
+[2m[36m(CompileWorker pid=1971552)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 7168, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.236099047619048
+[2m[36m(CompileWorker pid=1971552)[0m compiled for stage:5 name: stage_0_2_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1971551)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=1971551)[0m compiled for stage:6 name: stage_0_3_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1971550)[0m  tensor (Large latency) dimensions: (1, 2048, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.8711009523809525
+[2m[36m(CompileWorker pid=1971547)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971556)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 9.611946666666666
+[2m[36m(CompileWorker pid=1971546)[0m  tensor (Large latency) dimensions: (1, 2048, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 36.26325333333333
+[2m[36m(CompileWorker pid=1971557)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971549)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 9.611946666666666
+[2m[36m(CompileWorker pid=1971553)[0m  tensor (Large latency) dimensions: (1, 4096, 7168, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971551)[0m  tensor (Large latency) dimensions: (1, 2048, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.8711009523809525
+[2m[36m(CompileWorker pid=1971550)[0m  tensor (Large latency) dimensions: (1, 4096, 2048, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.3731352380952382
+[2m[36m(CompileWorker pid=1971556)[0m  tensor (Large latency) dimensions: (1, 2048, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 36.26325333333333
+[2m[36m(CompileWorker pid=1971557)[0m  tensor (Large latency) dimensions: (1, 14336, 2048, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971555)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971552)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 9.611946666666666
+[2m[36m(CompileWorker pid=1971547)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 9.611946666666666
+[2m[36m(CompileWorker pid=1971553)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 7168, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.236099047619048
+[2m[36m(CompileWorker pid=1971553)[0m compiled for stage:4 name: stage_0_2_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1971549)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=1971546)[0m  tensor (Large latency) dimensions: (1, 4096, 7168, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971554)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971548)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.7462704761904764
+[2m[36m(CompileWorker pid=1971557)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=1971547)[0m  tensor (Large latency) dimensions: (1, 2048, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 36.26325333333333
+[2m[36m(CompileWorker pid=1971556)[0m  tensor (Large latency) dimensions: (1, 4096, 7168, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971551)[0m  tensor (Large latency) dimensions: (1, 4096, 2048, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.3731352380952382
+[2m[36m(CompileWorker pid=1971552)[0m  tensor (Large latency) dimensions: (1, 2048, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 36.26325333333333
+[2m[36m(CompileWorker pid=1971555)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971553)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 9.611946666666666
+[2m[36m(CompileWorker pid=1971546)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971557)[0m  tensor (Large latency) dimensions: (1, 4096, 7168, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971554)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971555)[0m  tensor (Large latency) dimensions: (1, 14336, 2048, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971549)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=1971547)[0m  tensor (Large latency) dimensions: (1, 4096, 7168, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971556)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971549)[0m compiled for stage:8 name: stage_0_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1971548)[0m  tensor (Large latency) dimensions: (1, 4096, 7168, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971557)[0m  tensor (Large latency) dimensions: (1, 2048, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971552)[0m  tensor (Large latency) dimensions: (1, 4096, 7168, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971553)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=1971550)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971547)[0m  tensor (Large latency) dimensions: (1, 14336, 2048, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971556)[0m  tensor (Large latency) dimensions: (1, 16000, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 22.617721904761904
+[2m[36m(CompileWorker pid=1971555)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=1971554)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 9.611946666666666
+[2m[36m(CompileWorker pid=1971548)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 7168, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.236099047619048
+[2m[36m(CompileWorker pid=1971548)[0m compiled for stage:9 name: stage_0_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1971557)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971547)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=1971549)[0m  tensor (Large latency) dimensions: (1, 14336, 2048, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971555)[0m  tensor (Large latency) dimensions: (1, 2048, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971554)[0m  tensor (Large latency) dimensions: (1, 2048, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 36.26325333333333
+[2m[36m(CompileWorker pid=1971553)[0m  tensor (Large latency) dimensions: (1, 4096, 7168, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971550)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971552)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971551)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971547)[0m  tensor (Large latency) dimensions: (1, 2048, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971557)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971546)[0m compiled for stage:12 name: stage_1_2_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1971552)[0m  tensor (Large latency) dimensions: (1, 2048, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.8711009523809525
+[2m[36m(CompileWorker pid=1971554)[0m  tensor (Large latency) dimensions: (1, 4096, 7168, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971555)[0m  tensor (Large latency) dimensions: (1, 4096, 7168, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971549)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=1971548)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 9.611946666666666
+[2m[36m(CompileWorker pid=1971550)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 9.611946666666666
+[2m[36m(CompileWorker pid=1971547)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971553)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971557)[0m  tensor (Large latency) dimensions: (1, 16000, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 22.617721904761904
+[2m[36m(CompileWorker pid=1971551)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971556)[0m compiled for stage:13 name: stage_1_2_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1971556)[0m compiled for stage:13 name: stage_1_2_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1971546)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 9.611946666666666
+[2m[36m(CompileWorker pid=1971550)[0m  tensor (Large latency) dimensions: (1, 2048, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 36.26325333333333
+[2m[36m(CompileWorker pid=1971555)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971553)[0m  tensor (Large latency) dimensions: (1, 2048, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.8711009523809525
+[2m[36m(CompileWorker pid=1971554)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971552)[0m  tensor (Large latency) dimensions: (1, 4096, 2048, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.3731352380952382
+[2m[36m(CompileWorker pid=1971547)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971548)[0m  tensor (Large latency) dimensions: (1, 2048, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 36.26325333333333
+[2m[36m(CompileWorker pid=1971549)[0m  tensor (Large latency) dimensions: (1, 2048, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971551)[0m  tensor (Large latency) dimensions: (1, 14336, 2048, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971546)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=1971546)[0m compiled for stage:12 name: stage_1_2_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1971554)[0m  tensor (Large latency) dimensions: (1, 16000, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 22.617721904761904
+[2m[36m(CompileWorker pid=1971555)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971550)[0m  tensor (Large latency) dimensions: (1, 4096, 7168, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971553)[0m  tensor (Large latency) dimensions: (1, 4096, 2048, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.3731352380952382
+[2m[36m(CompileWorker pid=1971551)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=1971546)[0m  tensor (Large latency) dimensions: (1, 14336, 2048, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971557)[0m compiled for stage:14 name: stage_1_3_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1971548)[0m  tensor (Large latency) dimensions: (1, 4096, 7168, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971549)[0m  tensor (Large latency) dimensions: (1, 4096, 7168, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971555)[0m  tensor (Large latency) dimensions: (1, 16000, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 22.617721904761904
+[2m[36m(CompileWorker pid=1971550)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971551)[0m  tensor (Large latency) dimensions: (1, 2048, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971556)[0m compiled for stage:15 name: stage_1_3_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1971556)[0m compiled for stage:15 name: stage_1_3_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1971552)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971557)[0m  tensor (Large latency) dimensions: (1, 4096, 7168, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971546)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=1971555)[0m compiled for stage:18 name: stage_2_2_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1971550)[0m  tensor (Large latency) dimensions: (1, 16000, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 22.617721904761904
+[2m[36m(CompileWorker pid=1971557)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 7168, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.236099047619048
+[2m[36m(CompileWorker pid=1971557)[0m compiled for stage:14 name: stage_1_3_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1971548)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971551)[0m  tensor (Large latency) dimensions: (1, 4096, 7168, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971549)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971555)[0m  tensor (Large latency) dimensions: (1, 2048, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971555)[0m compiled for stage:18 name: stage_2_2_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1971556)[0m compiled for stage:19 name: stage_2_2_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1971546)[0m  tensor (Large latency) dimensions: (1, 2048, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971556)[0m 
+[2m[36m(CompileWorker pid=1971552)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971553)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971550)[0m compiled for stage:20 name: stage_2_3_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1971547)[0m compiled for stage:16 name: stage_1_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1971557)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 9.611946666666666
+[2m[36m(CompileWorker pid=1971548)[0m  tensor (Large latency) dimensions: (1, 2048, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.8711009523809525
+[2m[36m(CompileWorker pid=1971551)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971555)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 9.611946666666666
+[2m[36m(CompileWorker pid=1971556)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 9.611946666666666
+[2m[36m(CompileWorker pid=1971552)[0m  tensor (Large latency) dimensions: (1, 16000, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 22.617721904761904
+[2m[36m(CompileWorker pid=1971546)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971549)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971553)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971557)[0m  tensor (Large latency) dimensions: (1, 2048, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 36.26325333333333
+[2m[36m(CompileWorker pid=1971556)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=1971550)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=1971555)[0m  tensor (Large latency) dimensions: (1, 2048, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 36.26325333333333
+[2m[36m(CompileWorker pid=1971547)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=1971547)[0m compiled for stage:16 name: stage_1_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1971554)[0m compiled for stage:17 name: stage_1_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1971548)[0m  tensor (Large latency) dimensions: (1, 4096, 2048, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.3731352380952382
+[2m[36m(CompileWorker pid=1971554)[0m compiled for stage:17 name: stage_1_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1971551)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971550)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=1971550)[0m compiled for stage:20 name: stage_2_3_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1971553)[0m  tensor (Large latency) dimensions: (1, 14336, 2048, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971556)[0m  tensor (Large latency) dimensions: (1, 2048, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971556)[0m compiled for stage:19 name: stage_2_2_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1971547)[0m compiled for stage:24 name: stage_3_3_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1971547)[0m compiled for stage:24 name: stage_3_3_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1971549)[0m  tensor (Large latency) dimensions: (1, 2048, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.8711009523809525
+[2m[36m(CompileWorker pid=1971552)[0m compiled for stage:21 name: stage_2_3_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1971552)[0m compiled for stage:21 name: stage_2_3_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1971554)[0m compiled for stage:25 name: stage_3_3_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1971554)[0m compiled for stage:25 name: stage_3_3_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1971555)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 9.611946666666666
+[2m[36m(CompileWorker pid=1971550)[0m  tensor (Large latency) dimensions: (1, 14336, 2048, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971551)[0m  tensor (Large latency) dimensions: (1, 16000, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 22.617721904761904
+[2m[36m(CompileWorker pid=1971553)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=1971556)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 9.611946666666666
+[2m[36m(CompileWorker pid=1971547)[0m compiled for stage:26 name: stage_3_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1971547)[0m compiled for stage:26 name: stage_3_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1971555)[0m  tensor (Large latency) dimensions: (1, 4096, 2048, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.3731352380952382
+[2m[36m(CompileWorker pid=1971552)[0m compiled for stage:28 name: stage_4_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1971546)[0m compiled for stage:22 name: stage_2_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1971546)[0m compiled for stage:22 name: stage_2_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1971549)[0m  tensor (Large latency) dimensions: (1, 4096, 2048, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.3731352380952382
+[2m[36m(CompileWorker pid=1971550)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=1971556)[0m  tensor (Large latency) dimensions: (1, 14336, 2048, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971553)[0m  tensor (Large latency) dimensions: (1, 2048, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971557)[0m compiled for stage:23 name: stage_2_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1971557)[0m compiled for stage:23 name: stage_2_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1971554)[0m compiled for stage:27 name: stage_3_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1971554)[0m compiled for stage:27 name: stage_3_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1971555)[0m  tensor (Large latency) dimensions: (1, 2048, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.8711009523809525
+[2m[36m(CompileWorker pid=1971551)[0m compiled for stage:29 name: stage_4_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=1971556)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=1971552)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 9.611946666666666
+[2m[36m(CompileWorker pid=1971553)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971556)[0m  tensor (Large latency) dimensions: (1, 2048, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971551)[0m  tensor (Large latency) dimensions: (1, 2048, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971551)[0m compiled for stage:29 name: stage_4_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1971552)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=1971548)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971556)[0m  tensor (Large latency) dimensions: (1, 2048, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.8711009523809525
+[2m[36m(CompileWorker pid=1971553)[0m  tensor (Large latency) dimensions: (1, 16000, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 22.617721904761904
+[2m[36m(CompileWorker pid=1971552)[0m  tensor (Large latency) dimensions: (1, 2048, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971552)[0m compiled for stage:28 name: stage_4_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=1971551)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 9.611946666666666
+[2m[36m(CompileWorker pid=1971556)[0m  tensor (Large latency) dimensions: (1, 4096, 2048, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.3731352380952382
+[2m[36m(CompileWorker pid=1971548)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971549)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971552)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 9.611946666666666
+[2m[36m(CompileWorker pid=1971551)[0m  tensor (Large latency) dimensions: (1, 2048, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 36.26325333333333
+[2m[36m(CompileWorker pid=1971548)[0m  tensor (Large latency) dimensions: (1, 16000, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 22.617721904761904
+[2m[36m(CompileWorker pid=1971552)[0m  tensor (Large latency) dimensions: (1, 14336, 2048, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971551)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 9.611946666666666
+[2m[36m(CompileWorker pid=1971549)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=1971552)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=1971551)[0m  tensor (Large latency) dimensions: (1, 4096, 2048, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.3731352380952382
+[2m[36m(CompileWorker pid=1971549)[0m  tensor (Large latency) dimensions: (1, 16000, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 22.617721904761904
+[2m[36m(CompileWorker pid=1971552)[0m  tensor (Large latency) dimensions: (1, 2048, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 10.048853333333334
+[2m[36m(CompileWorker pid=1971551)[0m  tensor (Large latency) dimensions: (1, 2048, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.8711009523809525
+[2m[36m(CompileWorker pid=1971552)[0m  tensor (Large latency) dimensions: (1, 2048, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.8711009523809525
+[2m[36m(CompileWorker pid=1971552)[0m  tensor (Large latency) dimensions: (1, 4096, 2048, 2048, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.3731352380952382
+- parse estimation results for all stages
+Using pre computed peak Mem for (0, 0, 1, 0), module 0
+result[(0, 0, 1, 0), 0] = ModuleProfileResult(compute_cost=494.852, peak_memory=5.600 GB, invar_size=1.513 GB, outvar_size=12.499 GB, temp_buffer_size=-8.411 GB, available_memory=64.000 GB, comm_cost=2.585)
+Using pre computed peak Mem for (0, 0, 1, 0), module 1
+result[(0, 0, 1, 0), 1] = ModuleProfileResult(compute_cost=1035.550, peak_memory=6.500 GB, invar_size=13.011 GB, outvar_size=1.513 GB, temp_buffer_size=-6.511 GB, available_memory=64.000 GB, comm_cost=6.486)
+result[(0, 0, 1, 1), 0] = ModuleProfileResult(compute_cost=378.424, peak_memory=13.261 GB, invar_size=1.950 GB, outvar_size=10.311 GB, temp_buffer_size=1.000 GB, available_memory=64.000 GB, comm_cost=0.626)
+result[(0, 0, 1, 1), 1] = ModuleProfileResult(compute_cost=735.010, peak_memory=13.175 GB, invar_size=11.261 GB, outvar_size=1.950 GB, temp_buffer_size=1.914 GB, available_memory=64.000 GB, comm_cost=3.915)
+Using pre computed peak Mem for (0, 1, 1, 0), module 0
+result[(0, 1, 1, 0), 0] = ModuleProfileResult(compute_cost=907.858, peak_memory=11.200 GB, invar_size=2.864 GB, outvar_size=21.898 GB, temp_buffer_size=-13.562 GB, available_memory=64.000 GB, comm_cost=4.549)
+Using pre computed peak Mem for (0, 1, 1, 0), module 1
+result[(0, 1, 1, 0), 1] = ModuleProfileResult(compute_cost=2009.826, peak_memory=13.000 GB, invar_size=23.762 GB, outvar_size=2.864 GB, temp_buffer_size=-10.762 GB, available_memory=64.000 GB, comm_cost=13.088)
+result[(0, 1, 1, 1), 0] = ModuleProfileResult(compute_cost=685.666, peak_memory=22.262 GB, invar_size=3.739 GB, outvar_size=17.523 GB, temp_buffer_size=1.000 GB, available_memory=64.000 GB, comm_cost=0.811)
+result[(0, 1, 1, 1), 1] = ModuleProfileResult(compute_cost=1408.567, peak_memory=24.516 GB, invar_size=20.262 GB, outvar_size=3.739 GB, temp_buffer_size=4.254 GB, available_memory=64.000 GB, comm_cost=7.769)
+Using pre computed peak Mem for (0, 2, 1, 0), module 0
+result[(0, 2, 1, 0), 0] = ModuleProfileResult(compute_cost=1489.437, peak_memory=16.800 GB, invar_size=4.614 GB, outvar_size=27.195 GB, temp_buffer_size=-15.010 GB, available_memory=64.000 GB, comm_cost=9.910)
+Using pre computed peak Mem for (0, 2, 1, 0), module 1
+result[(0, 2, 1, 0), 1] = ModuleProfileResult(compute_cost=2931.149, peak_memory=19.500 GB, invar_size=30.809 GB, outvar_size=4.614 GB, temp_buffer_size=-11.309 GB, available_memory=64.000 GB, comm_cost=13.131)
+result[(0, 2, 1, 1), 0] = ModuleProfileResult(compute_cost=957.961, peak_memory=29.310 GB, invar_size=5.489 GB, outvar_size=22.820 GB, temp_buffer_size=1.000 GB, available_memory=64.000 GB, comm_cost=0.975)
+result[(0, 2, 1, 1), 1] = ModuleProfileResult(compute_cost=2043.422, peak_memory=33.462 GB, invar_size=27.309 GB, outvar_size=5.489 GB, temp_buffer_size=6.152 GB, available_memory=64.000 GB, comm_cost=11.450)
+Using pre computed peak Mem for (0, 3, 1, 0), module 0
+result[(0, 3, 1, 0), 0] = ModuleProfileResult(compute_cost=1491.628, peak_memory=22.400 GB, invar_size=4.216 GB, outvar_size=30.360 GB, temp_buffer_size=-12.176 GB, available_memory=64.000 GB, comm_cost=9.381)
+Using pre computed peak Mem for (0, 3, 1, 0), module 1
+result[(0, 3, 1, 0), 1] = ModuleProfileResult(compute_cost=2981.345, peak_memory=26.000 GB, invar_size=34.576 GB, outvar_size=4.216 GB, temp_buffer_size=-8.576 GB, available_memory=64.000 GB, comm_cost=16.808)
+result[(0, 3, 1, 1), 0] = ModuleProfileResult(compute_cost=993.033, peak_memory=30.326 GB, invar_size=5.528 GB, outvar_size=23.797 GB, temp_buffer_size=1.000 GB, available_memory=64.000 GB, comm_cost=0.995)
+result[(0, 3, 1, 1), 1] = ModuleProfileResult(compute_cost=2082.249, peak_memory=35.302 GB, invar_size=29.326 GB, outvar_size=5.528 GB, temp_buffer_size=5.977 GB, available_memory=64.000 GB, comm_cost=11.623)
+Using pre computed peak Mem for (0, 4, 1, 0), module 0
+result[(0, 4, 1, 0), 0] = ModuleProfileResult(compute_cost=1902.306, peak_memory=28.000 GB, invar_size=5.528 GB, outvar_size=37.907 GB, temp_buffer_size=-15.436 GB, available_memory=64.000 GB, comm_cost=11.862)
+Using pre computed peak Mem for (0, 4, 1, 0), module 1
+result[(0, 4, 1, 0), 1] = ModuleProfileResult(compute_cost=3917.240, peak_memory=32.500 GB, invar_size=43.436 GB, outvar_size=5.528 GB, temp_buffer_size=-10.936 GB, available_memory=64.000 GB, comm_cost=22.809)
+result[(0, 4, 1, 1), 0] = ModuleProfileResult(compute_cost=1265.953, peak_memory=37.436 GB, invar_size=7.278 GB, outvar_size=29.157 GB, temp_buffer_size=1.000 GB, available_memory=64.000 GB, comm_cost=1.159)
+result[(0, 4, 1, 1), 1] = ModuleProfileResult(compute_cost=2717.965, peak_memory=44.393 GB, invar_size=36.436 GB, outvar_size=7.278 GB, temp_buffer_size=7.957 GB, available_memory=64.000 GB, comm_cost=15.416)
+Using pre computed peak Mem for (1, 1, 1, 0), module 0
+result[(1, 1, 1, 0), 0] = ModuleProfileResult(compute_cost=320.863, peak_memory=5.600 GB, invar_size=2.797 GB, outvar_size=7.485 GB, temp_buffer_size=-4.682 GB, available_memory=64.000 GB, comm_cost=0.807)
+Using pre computed peak Mem for (1, 1, 1, 0), module 1
+result[(1, 1, 1, 0), 1] = ModuleProfileResult(compute_cost=711.147, peak_memory=6.500 GB, invar_size=9.282 GB, outvar_size=1.797 GB, temp_buffer_size=-2.845 GB, available_memory=64.000 GB, comm_cost=4.197)
+result[(1, 1, 1, 1), 0] = ModuleProfileResult(compute_cost=307.642, peak_memory=11.063 GB, invar_size=2.852 GB, outvar_size=7.212 GB, temp_buffer_size=1.000 GB, available_memory=64.000 GB, comm_cost=0.585)
+result[(1, 1, 1, 1), 1] = ModuleProfileResult(compute_cost=673.557, peak_memory=10.985 GB, invar_size=9.063 GB, outvar_size=1.852 GB, temp_buffer_size=1.859 GB, available_memory=64.000 GB, comm_cost=3.854)
+Using pre computed peak Mem for (1, 2, 1, 0), module 0
+result[(1, 2, 1, 0), 0] = ModuleProfileResult(compute_cost=593.158, peak_memory=11.200 GB, invar_size=4.547 GB, outvar_size=12.783 GB, temp_buffer_size=-6.129 GB, available_memory=64.000 GB, comm_cost=0.971)
+Using pre computed peak Mem for (1, 2, 1, 0), module 1
+result[(1, 2, 1, 0), 1] = ModuleProfileResult(compute_cost=1346.002, peak_memory=13.000 GB, invar_size=16.329 GB, outvar_size=3.547 GB, temp_buffer_size=-3.392 GB, available_memory=64.000 GB, comm_cost=7.878)
+result[(1, 2, 1, 1), 0] = ModuleProfileResult(compute_cost=579.938, peak_memory=18.111 GB, invar_size=4.602 GB, outvar_size=12.509 GB, temp_buffer_size=1.000 GB, available_memory=64.000 GB, comm_cost=0.749)
+result[(1, 2, 1, 1), 1] = ModuleProfileResult(compute_cost=1308.412, peak_memory=19.642 GB, invar_size=16.111 GB, outvar_size=3.602 GB, temp_buffer_size=3.469 GB, available_memory=64.000 GB, comm_cost=7.535)
+Using pre computed peak Mem for (1, 3, 1, 0), module 0
+result[(1, 3, 1, 0), 0] = ModuleProfileResult(compute_cost=638.895, peak_memory=16.800 GB, invar_size=4.586 GB, outvar_size=14.760 GB, temp_buffer_size=-2.546 GB, available_memory=64.000 GB, comm_cost=1.171)
+Using pre computed peak Mem for (1, 3, 1, 0), module 1
+result[(1, 3, 1, 0), 1] = ModuleProfileResult(compute_cost=1384.649, peak_memory=19.500 GB, invar_size=18.346 GB, outvar_size=3.586 GB, temp_buffer_size=1.092 GB, available_memory=64.000 GB, comm_cost=7.871)
+result[(1, 3, 1, 1), 0] = ModuleProfileResult(compute_cost=615.009, peak_memory=20.127 GB, invar_size=4.641 GB, outvar_size=14.486 GB, temp_buffer_size=1.000 GB, available_memory=64.000 GB, comm_cost=0.770)
+result[(1, 3, 1, 1), 1] = ModuleProfileResult(compute_cost=1347.240, peak_memory=22.025 GB, invar_size=18.127 GB, outvar_size=3.641 GB, temp_buffer_size=3.836 GB, available_memory=64.000 GB, comm_cost=7.708)
+Using pre computed peak Mem for (1, 4, 1, 0), module 0
+result[(1, 4, 1, 0), 0] = ModuleProfileResult(compute_cost=922.480, peak_memory=22.400 GB, invar_size=6.336 GB, outvar_size=20.120 GB, temp_buffer_size=-4.056 GB, available_memory=64.000 GB, comm_cost=1.514)
+result[(1, 4, 1, 0), 1] = ModuleProfileResult(compute_cost=2020.185, peak_memory=30.612 GB, invar_size=25.455 GB, outvar_size=5.336 GB, temp_buffer_size=5.094 GB, available_memory=64.000 GB, comm_cost=11.484)
+result[(1, 4, 1, 1), 0] = ModuleProfileResult(compute_cost=887.929, peak_memory=27.237 GB, invar_size=6.391 GB, outvar_size=19.846 GB, temp_buffer_size=1.000 GB, available_memory=64.000 GB, comm_cost=0.934)
+result[(1, 4, 1, 1), 1] = ModuleProfileResult(compute_cost=1982.955, peak_memory=30.510 GB, invar_size=25.237 GB, outvar_size=5.391 GB, temp_buffer_size=5.211 GB, available_memory=64.000 GB, comm_cost=11.500)
+Using pre computed peak Mem for (2, 2, 1, 0), module 0
+result[(2, 2, 1, 0), 0] = ModuleProfileResult(compute_cost=368.241, peak_memory=5.600 GB, invar_size=2.031 GB, outvar_size=6.829 GB, temp_buffer_size=-3.260 GB, available_memory=64.000 GB, comm_cost=2.174)
+result[(2, 2, 1, 0), 1] = ModuleProfileResult(compute_cost=723.534, peak_memory=11.001 GB, invar_size=8.829 GB, outvar_size=2.000 GB, temp_buffer_size=2.141 GB, available_memory=64.000 GB, comm_cost=5.072)
+Using pre computed peak Mem for (2, 2, 1, 1), module 0
+result[(2, 2, 1, 1), 0] = ModuleProfileResult(compute_cost=360.577, peak_memory=5.600 GB, invar_size=2.523 GB, outvar_size=6.336 GB, temp_buffer_size=-3.260 GB, available_memory=64.000 GB, comm_cost=2.047)
+result[(2, 2, 1, 1), 1] = ModuleProfileResult(compute_cost=618.944, peak_memory=11.422 GB, invar_size=8.829 GB, outvar_size=2.492 GB, temp_buffer_size=2.563 GB, available_memory=64.000 GB, comm_cost=5.200)
+Using pre computed peak Mem for (2, 3, 1, 0), module 0
+result[(2, 3, 1, 0), 0] = ModuleProfileResult(compute_cost=342.318, peak_memory=11.200 GB, invar_size=2.797 GB, outvar_size=7.548 GB, temp_buffer_size=0.855 GB, available_memory=64.000 GB, comm_cost=1.166)
+result[(2, 3, 1, 0), 1] = ModuleProfileResult(compute_cost=710.912, peak_memory=11.517 GB, invar_size=9.345 GB, outvar_size=1.797 GB, temp_buffer_size=2.109 GB, available_memory=64.000 GB, comm_cost=3.838)
+result[(2, 3, 1, 1), 0] = ModuleProfileResult(compute_cost=307.768, peak_memory=11.126 GB, invar_size=2.852 GB, outvar_size=7.274 GB, temp_buffer_size=1.000 GB, available_memory=64.000 GB, comm_cost=0.585)
+result[(2, 3, 1, 1), 1] = ModuleProfileResult(compute_cost=673.682, peak_memory=11.282 GB, invar_size=9.126 GB, outvar_size=1.852 GB, temp_buffer_size=2.094 GB, available_memory=64.000 GB, comm_cost=3.854)
+Using pre computed peak Mem for (2, 4, 1, 0), module 0
+result[(2, 4, 1, 0), 0] = ModuleProfileResult(compute_cost=593.908, peak_memory=16.800 GB, invar_size=4.547 GB, outvar_size=12.908 GB, temp_buffer_size=-0.655 GB, available_memory=64.000 GB, comm_cost=0.971)
+Using pre computed peak Mem for (2, 4, 1, 0), module 1
+result[(2, 4, 1, 0), 1] = ModuleProfileResult(compute_cost=1346.988, peak_memory=19.500 GB, invar_size=16.455 GB, outvar_size=3.547 GB, temp_buffer_size=2.983 GB, available_memory=64.000 GB, comm_cost=7.990)
+result[(2, 4, 1, 1), 0] = ModuleProfileResult(compute_cost=580.688, peak_memory=18.236 GB, invar_size=4.602 GB, outvar_size=12.634 GB, temp_buffer_size=1.000 GB, available_memory=64.000 GB, comm_cost=0.749)
+result[(2, 4, 1, 1), 1] = ModuleProfileResult(compute_cost=1309.398, peak_memory=19.767 GB, invar_size=16.236 GB, outvar_size=3.602 GB, temp_buffer_size=3.469 GB, available_memory=64.000 GB, comm_cost=7.646)
+result[(3, 3, 1, 0), 0] = ModuleProfileResult(compute_cost=35.072, peak_memory=4.083 GB, invar_size=1.102 GB, outvar_size=1.977 GB, temp_buffer_size=1.004 GB, available_memory=64.000 GB, comm_cost=0.020)
+result[(3, 3, 1, 0), 1] = ModuleProfileResult(compute_cost=38.716, peak_memory=3.657 GB, invar_size=2.079 GB, outvar_size=0.102 GB, temp_buffer_size=1.516 GB, available_memory=64.000 GB, comm_cost=0.061)
+result[(3, 3, 1, 1), 0] = ModuleProfileResult(compute_cost=35.072, peak_memory=4.083 GB, invar_size=1.102 GB, outvar_size=1.977 GB, temp_buffer_size=1.004 GB, available_memory=64.000 GB, comm_cost=0.020)
+result[(3, 3, 1, 1), 1] = ModuleProfileResult(compute_cost=38.716, peak_memory=3.657 GB, invar_size=2.079 GB, outvar_size=0.102 GB, temp_buffer_size=1.516 GB, available_memory=64.000 GB, comm_cost=0.061)
+Using pre computed peak Mem for (3, 4, 1, 0), module 0
+result[(3, 4, 1, 0), 0] = ModuleProfileResult(compute_cost=414.156, peak_memory=11.200 GB, invar_size=2.414 GB, outvar_size=9.524 GB, temp_buffer_size=-0.739 GB, available_memory=64.000 GB, comm_cost=2.365)
+Using pre computed peak Mem for (3, 4, 1, 0), module 1
+result[(3, 4, 1, 0), 1] = ModuleProfileResult(compute_cost=975.150, peak_memory=13.000 GB, invar_size=10.939 GB, outvar_size=1.414 GB, temp_buffer_size=1.999 GB, available_memory=64.000 GB, comm_cost=6.602)
+result[(3, 4, 1, 1), 0] = ModuleProfileResult(compute_cost=308.392, peak_memory=11.189 GB, invar_size=2.852 GB, outvar_size=7.337 GB, temp_buffer_size=1.000 GB, available_memory=64.000 GB, comm_cost=0.585)
+result[(3, 4, 1, 1), 1] = ModuleProfileResult(compute_cost=674.431, peak_memory=11.017 GB, invar_size=9.189 GB, outvar_size=1.852 GB, temp_buffer_size=1.766 GB, available_memory=64.000 GB, comm_cost=3.854)
+Using pre computed peak Mem for (4, 4, 1, 0), module 0
+result[(4, 4, 1, 0), 0] = ModuleProfileResult(compute_cost=368.865, peak_memory=5.600 GB, invar_size=2.031 GB, outvar_size=6.891 GB, temp_buffer_size=-3.322 GB, available_memory=64.000 GB, comm_cost=2.174)
+result[(4, 4, 1, 0), 1] = ModuleProfileResult(compute_cost=724.341, peak_memory=11.360 GB, invar_size=8.922 GB, outvar_size=2.000 GB, temp_buffer_size=2.406 GB, available_memory=64.000 GB, comm_cost=5.068)
+Using pre computed peak Mem for (4, 4, 1, 1), module 0
+result[(4, 4, 1, 1), 0] = ModuleProfileResult(compute_cost=373.975, peak_memory=5.600 GB, invar_size=1.703 GB, outvar_size=7.219 GB, temp_buffer_size=-3.322 GB, available_memory=64.000 GB, comm_cost=2.259)
+result[(4, 4, 1, 1), 1] = ModuleProfileResult(compute_cost=794.067, peak_memory=11.422 GB, invar_size=8.922 GB, outvar_size=1.672 GB, temp_buffer_size=2.469 GB, available_memory=64.000 GB, comm_cost=4.983)
+Profiling for submesh 1 (1, 2) takes 562.10 seconds
+--------------------------------------------------
+- Profiling for submesh 0 (1, 1):
+- Generate all stage infos (Jaxpr -> HLO)
+- Compile all stages, get estimations
+num of workers:12
+[2m[36m(CompileWorker pid=2009713)[0m compiled for stage:11 name: stage_1_1_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=2009714)[0m compiled for stage:10 name: stage_1_1_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=2009724)[0m compiled for stage:0 name: stage_0_0_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=2009723)[0m compiled for stage:1 name: stage_0_0_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=2009721)[0m compiled for stage:3 name: stage_0_1_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=2009722)[0m compiled for stage:2 name: stage_0_1_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=2009718)[0m compiled for stage:6 name: stage_0_3_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=2009717)[0m compiled for stage:7 name: stage_0_3_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=2009720)[0m compiled for stage:4 name: stage_0_2_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=2009719)[0m compiled for stage:5 name: stage_0_2_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=2009715)[0m compiled for stage:9 name: stage_0_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=2009716)[0m compiled for stage:8 name: stage_0_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=2009718)[0m  tensor (Large latency) dimensions: (1, 1, 4096, 32000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.1942857142857144
+[2m[36m(CompileWorker pid=2009724)[0m  tensor (Large latency) dimensions: (1, 1, 4096, 32000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.1942857142857144
+[2m[36m(CompileWorker pid=2009723)[0m  tensor (Large latency) dimensions: (1, 1, 4096, 32000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.1942857142857144
+[2m[36m(CompileWorker pid=2009721)[0m  tensor (Large latency) dimensions: (1, 1, 4096, 32000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.1942857142857144
+[2m[36m(CompileWorker pid=2009722)[0m  tensor (Large latency) dimensions: (1, 1, 4096, 32000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.1942857142857144
+[2m[36m(CompileWorker pid=2009715)[0m  tensor (Large latency) dimensions: (1, 1, 4096, 32000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.1942857142857144
+[2m[36m(CompileWorker pid=2009716)[0m  tensor (Large latency) dimensions: (1, 1, 4096, 32000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.1942857142857144
+[2m[36m(CompileWorker pid=2009717)[0m  tensor (Large latency) dimensions: (1, 1, 4096, 32000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.1942857142857144
+[2m[36m(CompileWorker pid=2009720)[0m  tensor (Large latency) dimensions: (1, 1, 4096, 32000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.1942857142857144
+[2m[36m(CompileWorker pid=2009719)[0m  tensor (Large latency) dimensions: (1, 1, 4096, 32000, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 2.1942857142857144
+[2m[36m(CompileWorker pid=2009713)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009714)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009713)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=2009714)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=2009724)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009722)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009721)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009723)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009717)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009720)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009719)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009718)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009714)[0m compiled for stage:10 name: stage_1_1_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=2009715)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009713)[0m compiled for stage:11 name: stage_1_1_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=2009724)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=2009724)[0m compiled for stage:0 name: stage_0_0_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=2009716)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009722)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=2009722)[0m compiled for stage:2 name: stage_0_1_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=2009721)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=2009721)[0m compiled for stage:3 name: stage_0_1_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=2009723)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=2009723)[0m compiled for stage:1 name: stage_0_0_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=2009717)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=2009717)[0m compiled for stage:7 name: stage_0_3_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=2009718)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=2009718)[0m compiled for stage:6 name: stage_0_3_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=2009719)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=2009719)[0m compiled for stage:5 name: stage_0_2_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=2009720)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=2009720)[0m compiled for stage:4 name: stage_0_2_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=2009715)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=2009715)[0m compiled for stage:9 name: stage_0_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=2009716)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.72185904761905
+[2m[36m(CompileWorker pid=2009716)[0m compiled for stage:8 name: stage_0_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=2009720)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009719)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009715)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009716)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009720)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=2009719)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=2009715)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=2009713)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009714)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009724)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009716)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=2009721)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009723)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009722)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009717)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009724)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=2009718)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009714)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=2009713)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=2009720)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009719)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009721)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=2009715)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009723)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=2009722)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=2009716)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009717)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=2009718)[0m  tensor (Large latency) dimensions: (1, 4096, 14336, 14336, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 72.52650666666666
+[2m[36m(CompileWorker pid=2009724)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009714)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009713)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009720)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=2009719)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=2009721)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009715)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=2009723)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009722)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009716)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=2009717)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009724)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=2009714)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=2009713)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=2009718)[0m  tensor (Large latency) dimensions: (1, 14336, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 20.097706666666667
+[2m[36m(CompileWorker pid=2009724)[0m  tensor (Large latency) dimensions: (1, 4096, 32000, 1, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.9504761904761905
+[2m[36m(CompileWorker pid=2009714)[0m compiled for stage:12 name: stage_1_2_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=2009714)[0m compiled for stage:12 name: stage_1_2_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=2009713)[0m compiled for stage:13 name: stage_1_2_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=2009721)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=2009713)[0m compiled for stage:13 name: stage_1_2_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=2009723)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=2009724)[0m compiled for stage:14 name: stage_1_3_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=2009722)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=2009724)[0m compiled for stage:14 name: stage_1_3_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=2009721)[0m  tensor (Large latency) dimensions: (1, 4096, 32000, 1, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.9504761904761905
+[2m[36m(CompileWorker pid=2009723)[0m  tensor (Large latency) dimensions: (1, 4096, 32000, 1, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.9504761904761905
+[2m[36m(CompileWorker pid=2009714)[0m compiled for stage:15 name: stage_1_3_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=2009722)[0m  tensor (Large latency) dimensions: (1, 4096, 32000, 1, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.9504761904761905
+[2m[36m(CompileWorker pid=2009714)[0m compiled for stage:15 name: stage_1_3_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=2009717)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=2009713)[0m compiled for stage:16 name: stage_1_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=2009713)[0m compiled for stage:16 name: stage_1_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=2009718)[0m  tensor (Large latency) dimensions: (1, 4096, 4096, 4096, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 5.742201904761905
+[2m[36m(CompileWorker pid=2009714)[0m compiled for stage:18 name: stage_2_2_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=2009717)[0m  tensor (Large latency) dimensions: (1, 4096, 32000, 1, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.9504761904761905
+[2m[36m(CompileWorker pid=2009720)[0m  tensor (Large latency) dimensions: (1, 4096, 32000, 1, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.9504761904761905
+[2m[36m(CompileWorker pid=2009714)[0m compiled for stage:18 name: stage_2_2_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=2009721)[0m compiled for stage:17 name: stage_1_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=2009723)[0m compiled for stage:19 name: stage_2_2_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=2009723)[0m compiled for stage:19 name: stage_2_2_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=2009721)[0m compiled for stage:17 name: stage_1_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=2009718)[0m  tensor (Large latency) dimensions: (1, 4096, 32000, 1, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.9504761904761905
+[2m[36m(CompileWorker pid=2009724)[0m compiled for stage:20 name: stage_2_3_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=2009724)[0m compiled for stage:20 name: stage_2_3_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=2009719)[0m  tensor (Large latency) dimensions: (1, 4096, 32000, 1, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.9504761904761905
+[2m[36m(CompileWorker pid=2009714)[0m compiled for stage:21 name: stage_2_3_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=2009714)[0m compiled for stage:21 name: stage_2_3_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=2009716)[0m  tensor (Large latency) dimensions: (1, 4096, 32000, 1, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.9504761904761905
+[2m[36m(CompileWorker pid=2009715)[0m  tensor (Large latency) dimensions: (1, 4096, 32000, 1, 1, 1, 1, 1, 1, 1, 0, 0, 'CONV', 1, 1, 0, 0),  latency: 1.9504761904761905
+[2m[36m(CompileWorker pid=2009718)[0m compiled for stage:22 name: stage_2_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=2009718)[0m compiled for stage:22 name: stage_2_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=2009715)[0m compiled for stage:23 name: stage_2_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=2009716)[0m compiled for stage:24 name: stage_3_3_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=2009716)[0m compiled for stage:24 name: stage_3_3_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=2009715)[0m compiled for stage:23 name: stage_2_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=2009716)[0m compiled for stage:25 name: stage_3_3_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=2009716)[0m compiled for stage:25 name: stage_3_3_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=2009713)[0m compiled for stage:26 name: stage_3_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=2009713)[0m compiled for stage:26 name: stage_3_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=2009721)[0m compiled for stage:27 name: stage_3_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=2009721)[0m compiled for stage:27 name: stage_3_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=2009716)[0m compiled for stage:28 name: stage_4_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=2009722)[0m compiled for stage:29 name: stage_4_4_acc_grad_0 module id: 0
+[2m[36m(CompileWorker pid=2009716)[0m compiled for stage:28 name: stage_4_4_acc_grad_1 module id: 1
+[2m[36m(CompileWorker pid=2009722)[0m compiled for stage:29 name: stage_4_4_acc_grad_1 module id: 1
+- parse estimation results for all stages
+result[(0, 0, 0, 0), 0] = ModuleProfileResult(compute_cost=663.970, peak_memory=22.225 GB, invar_size=3.025 GB, outvar_size=17.200 GB, temp_buffer_size=2.000 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(0, 0, 0, 0), 1] = ModuleProfileResult(compute_cost=1239.666, peak_memory=22.538 GB, invar_size=19.225 GB, outvar_size=3.025 GB, temp_buffer_size=3.313 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(0, 0, 0, 1), 0] = ModuleProfileResult(compute_cost=663.970, peak_memory=22.225 GB, invar_size=3.025 GB, outvar_size=17.200 GB, temp_buffer_size=2.000 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(0, 0, 0, 1), 1] = ModuleProfileResult(compute_cost=1239.666, peak_memory=22.538 GB, invar_size=19.225 GB, outvar_size=3.025 GB, temp_buffer_size=3.313 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(0, 1, 0, 0), 0] = ModuleProfileResult(compute_cost=1265.305, peak_memory=37.282 GB, invar_size=5.729 GB, outvar_size=29.545 GB, temp_buffer_size=2.008 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(0, 1, 0, 0), 1] = ModuleProfileResult(compute_cost=2445.327, peak_memory=37.806 GB, invar_size=34.274 GB, outvar_size=5.729 GB, temp_buffer_size=3.532 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(0, 1, 0, 1), 0] = ModuleProfileResult(compute_cost=1265.305, peak_memory=37.282 GB, invar_size=5.729 GB, outvar_size=29.545 GB, temp_buffer_size=2.008 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(0, 1, 0, 1), 1] = ModuleProfileResult(compute_cost=2445.327, peak_memory=37.806 GB, invar_size=34.274 GB, outvar_size=5.729 GB, temp_buffer_size=3.532 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(0, 2, 0, 0), 0] = ModuleProfileResult(compute_cost=1810.195, peak_memory=48.704 GB, invar_size=8.354 GB, outvar_size=38.343 GB, temp_buffer_size=2.008 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(0, 2, 0, 0), 1] = ModuleProfileResult(compute_cost=3619.420, peak_memory=49.259 GB, invar_size=45.696 GB, outvar_size=8.354 GB, temp_buffer_size=3.563 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(0, 2, 0, 1), 0] = ModuleProfileResult(compute_cost=1810.195, peak_memory=48.704 GB, invar_size=8.354 GB, outvar_size=38.343 GB, temp_buffer_size=2.008 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(0, 2, 0, 1), 1] = ModuleProfileResult(compute_cost=3619.420, peak_memory=49.259 GB, invar_size=45.696 GB, outvar_size=8.354 GB, temp_buffer_size=3.563 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(0, 3, 0, 0), 0] = ModuleProfileResult(compute_cost=1866.765, peak_memory=51.393 GB, invar_size=8.432 GB, outvar_size=40.953 GB, temp_buffer_size=2.008 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(0, 3, 0, 0), 1] = ModuleProfileResult(compute_cost=3651.112, peak_memory=52.979 GB, invar_size=49.385 GB, outvar_size=8.432 GB, temp_buffer_size=3.594 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(0, 3, 0, 1), 0] = ModuleProfileResult(compute_cost=1866.765, peak_memory=51.393 GB, invar_size=8.432 GB, outvar_size=40.953 GB, temp_buffer_size=2.008 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(0, 3, 0, 1), 1] = ModuleProfileResult(compute_cost=3651.112, peak_memory=52.979 GB, invar_size=49.385 GB, outvar_size=8.432 GB, temp_buffer_size=3.594 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(0, 4, 0, 0), 0] = ModuleProfileResult(compute_cost=2412.280, peak_memory=62.878 GB, invar_size=11.057 GB, outvar_size=49.813 GB, temp_buffer_size=2.008 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(0, 4, 0, 0), 1] = ModuleProfileResult(compute_cost=4825.955, peak_memory=64.589 GB, invar_size=60.870 GB, outvar_size=11.057 GB, temp_buffer_size=3.719 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(0, 4, 0, 1), 0] = ModuleProfileResult(compute_cost=2412.280, peak_memory=62.878 GB, invar_size=11.057 GB, outvar_size=49.813 GB, temp_buffer_size=2.008 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(0, 4, 0, 1), 1] = ModuleProfileResult(compute_cost=4825.955, peak_memory=64.589 GB, invar_size=60.870 GB, outvar_size=11.057 GB, temp_buffer_size=3.719 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(1, 1, 0, 0), 0] = ModuleProfileResult(compute_cost=601.335, peak_memory=18.111 GB, invar_size=3.766 GB, outvar_size=12.345 GB, temp_buffer_size=2.000 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(1, 1, 0, 0), 1] = ModuleProfileResult(compute_cost=1205.661, peak_memory=18.205 GB, invar_size=15.111 GB, outvar_size=2.766 GB, temp_buffer_size=3.031 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(1, 1, 0, 1), 0] = ModuleProfileResult(compute_cost=601.335, peak_memory=18.111 GB, invar_size=3.766 GB, outvar_size=12.345 GB, temp_buffer_size=2.000 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(1, 1, 0, 1), 1] = ModuleProfileResult(compute_cost=1205.661, peak_memory=18.205 GB, invar_size=15.111 GB, outvar_size=2.766 GB, temp_buffer_size=3.031 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(1, 2, 0, 0), 0] = ModuleProfileResult(compute_cost=1146.225, peak_memory=29.533 GB, invar_size=6.391 GB, outvar_size=21.143 GB, temp_buffer_size=2.000 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(1, 2, 0, 0), 1] = ModuleProfileResult(compute_cost=2379.754, peak_memory=29.753 GB, invar_size=26.533 GB, outvar_size=5.391 GB, temp_buffer_size=3.157 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(1, 2, 0, 1), 0] = ModuleProfileResult(compute_cost=1146.225, peak_memory=29.533 GB, invar_size=6.391 GB, outvar_size=21.143 GB, temp_buffer_size=2.000 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(1, 2, 0, 1), 1] = ModuleProfileResult(compute_cost=2379.754, peak_memory=29.753 GB, invar_size=26.533 GB, outvar_size=5.391 GB, temp_buffer_size=3.157 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(1, 3, 0, 0), 0] = ModuleProfileResult(compute_cost=1202.796, peak_memory=33.222 GB, invar_size=6.469 GB, outvar_size=24.753 GB, temp_buffer_size=2.000 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(1, 3, 0, 0), 1] = ModuleProfileResult(compute_cost=2411.446, peak_memory=33.535 GB, invar_size=30.222 GB, outvar_size=5.469 GB, temp_buffer_size=3.250 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(1, 3, 0, 1), 0] = ModuleProfileResult(compute_cost=1202.796, peak_memory=33.222 GB, invar_size=6.469 GB, outvar_size=24.753 GB, temp_buffer_size=2.000 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(1, 3, 0, 1), 1] = ModuleProfileResult(compute_cost=2411.446, peak_memory=33.535 GB, invar_size=30.222 GB, outvar_size=5.469 GB, temp_buffer_size=3.250 GB, available_memory=64.000 GB, comm_cost=0.000)
+[2m[36m(CompileWorker pid=1971548)[0m /storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/shard_parallel/auto_sharding.py:880: UserWarning: Detect unexpected behaviors in the auto-sharding pass.
+[2m[36m(CompileWorker pid=1971548)[0m   warnings.warn("Detect unexpected behaviors in the auto-sharding pass.")
+[2m[36m(CompileWorker pid=1971546)[0m E0221 01:15:51.216479037 1972003 chttp2_transport.cc:1103]   Received a GOAWAY with error code ENHANCE_YOUR_CALM and debug data equal to "too_many_pings"
+result[(1, 4, 0, 0), 0] = ModuleProfileResult(compute_cost=1748.310, peak_memory=44.707 GB, invar_size=9.094 GB, outvar_size=33.613 GB, temp_buffer_size=2.000 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(1, 4, 0, 0), 1] = ModuleProfileResult(compute_cost=3586.289, peak_memory=45.145 GB, invar_size=41.707 GB, outvar_size=8.094 GB, temp_buffer_size=3.375 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(1, 4, 0, 1), 0] = ModuleProfileResult(compute_cost=1748.310, peak_memory=44.707 GB, invar_size=9.094 GB, outvar_size=33.613 GB, temp_buffer_size=2.000 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(1, 4, 0, 1), 1] = ModuleProfileResult(compute_cost=3586.289, peak_memory=45.145 GB, invar_size=41.707 GB, outvar_size=8.094 GB, temp_buffer_size=3.375 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(2, 2, 0, 0), 0] = ModuleProfileResult(compute_cost=544.890, peak_memory=11.610 GB, invar_size=2.688 GB, outvar_size=8.797 GB, temp_buffer_size=0.125 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(2, 2, 0, 0), 1] = ModuleProfileResult(compute_cost=1174.093, peak_memory=12.672 GB, invar_size=11.485 GB, outvar_size=2.688 GB, temp_buffer_size=1.125 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(2, 2, 0, 1), 0] = ModuleProfileResult(compute_cost=544.890, peak_memory=11.610 GB, invar_size=2.688 GB, outvar_size=8.797 GB, temp_buffer_size=0.125 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(2, 2, 0, 1), 1] = ModuleProfileResult(compute_cost=1174.093, peak_memory=12.672 GB, invar_size=11.485 GB, outvar_size=2.688 GB, temp_buffer_size=1.125 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(2, 3, 0, 0), 0] = ModuleProfileResult(compute_cost=601.461, peak_memory=18.174 GB, invar_size=3.766 GB, outvar_size=12.408 GB, temp_buffer_size=2.000 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(2, 3, 0, 0), 1] = ModuleProfileResult(compute_cost=1205.786, peak_memory=18.267 GB, invar_size=15.174 GB, outvar_size=2.766 GB, temp_buffer_size=3.031 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(2, 3, 0, 1), 0] = ModuleProfileResult(compute_cost=601.461, peak_memory=18.174 GB, invar_size=3.766 GB, outvar_size=12.408 GB, temp_buffer_size=2.000 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(2, 3, 0, 1), 1] = ModuleProfileResult(compute_cost=1205.786, peak_memory=18.267 GB, invar_size=15.174 GB, outvar_size=2.766 GB, temp_buffer_size=3.031 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(2, 4, 0, 0), 0] = ModuleProfileResult(compute_cost=1146.975, peak_memory=29.659 GB, invar_size=6.391 GB, outvar_size=21.268 GB, temp_buffer_size=2.000 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(2, 4, 0, 0), 1] = ModuleProfileResult(compute_cost=2380.628, peak_memory=29.878 GB, invar_size=26.659 GB, outvar_size=5.391 GB, temp_buffer_size=3.157 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(2, 4, 0, 1), 0] = ModuleProfileResult(compute_cost=1146.975, peak_memory=29.659 GB, invar_size=6.391 GB, outvar_size=21.268 GB, temp_buffer_size=2.000 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(2, 4, 0, 1), 1] = ModuleProfileResult(compute_cost=2380.628, peak_memory=29.878 GB, invar_size=26.659 GB, outvar_size=5.391 GB, temp_buffer_size=3.157 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(3, 3, 0, 0), 0] = ModuleProfileResult(compute_cost=56.570, peak_memory=6.751 GB, invar_size=1.141 GB, outvar_size=3.610 GB, temp_buffer_size=2.000 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(3, 3, 0, 0), 1] = ModuleProfileResult(compute_cost=31.692, peak_memory=6.845 GB, invar_size=3.751 GB, outvar_size=0.141 GB, temp_buffer_size=3.031 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(3, 3, 0, 1), 0] = ModuleProfileResult(compute_cost=56.570, peak_memory=6.751 GB, invar_size=1.141 GB, outvar_size=3.610 GB, temp_buffer_size=2.000 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(3, 3, 0, 1), 1] = ModuleProfileResult(compute_cost=31.692, peak_memory=6.845 GB, invar_size=3.751 GB, outvar_size=0.141 GB, temp_buffer_size=3.031 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(3, 4, 0, 0), 0] = ModuleProfileResult(compute_cost=602.085, peak_memory=18.236 GB, invar_size=3.766 GB, outvar_size=12.470 GB, temp_buffer_size=2.000 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(3, 4, 0, 0), 1] = ModuleProfileResult(compute_cost=1206.535, peak_memory=18.455 GB, invar_size=15.236 GB, outvar_size=2.766 GB, temp_buffer_size=3.157 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(3, 4, 0, 1), 0] = ModuleProfileResult(compute_cost=602.085, peak_memory=18.236 GB, invar_size=3.766 GB, outvar_size=12.470 GB, temp_buffer_size=2.000 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(3, 4, 0, 1), 1] = ModuleProfileResult(compute_cost=1206.535, peak_memory=18.455 GB, invar_size=15.236 GB, outvar_size=2.766 GB, temp_buffer_size=3.157 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(4, 4, 0, 0), 0] = ModuleProfileResult(compute_cost=545.514, peak_memory=11.610 GB, invar_size=2.688 GB, outvar_size=8.860 GB, temp_buffer_size=0.063 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(4, 4, 0, 0), 1] = ModuleProfileResult(compute_cost=1174.842, peak_memory=12.735 GB, invar_size=11.547 GB, outvar_size=2.688 GB, temp_buffer_size=1.125 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(4, 4, 0, 1), 0] = ModuleProfileResult(compute_cost=545.514, peak_memory=11.610 GB, invar_size=2.688 GB, outvar_size=8.860 GB, temp_buffer_size=0.063 GB, available_memory=64.000 GB, comm_cost=0.000)
+result[(4, 4, 0, 1), 1] = ModuleProfileResult(compute_cost=1174.842, peak_memory=12.735 GB, invar_size=11.547 GB, outvar_size=2.688 GB, temp_buffer_size=1.125 GB, available_memory=64.000 GB, comm_cost=0.000)
+Profiling for submesh 0 (1, 1) takes 367.07 seconds
+--------------------------------------------------
+Profile result saved to: profile-results-2026-02-21-01-27-47.npy
+----------------------------------------------------------------------
+Best solution cost: 4562653.569091797
+Result forward_stage_layer_ids: [[0], [1, 2], [3, 4]]
+Result mesh_shapes: [(1, 2), (1, 4), (1, 2)]
+Result logical_mesh_shapes: [(2, 1), (4, 1), (2, 1)]
+Result autosharding_option_dicts: [{}, {}, {}]
+Elapsed time: 1604.78s
+--------------------------------------------------
+Traceback (most recent call last):
+  File "alpa/pipeshard_parallelism_mixtral.py", line 139, in main
+    state = train_step(state, batch)
+  File "/storage/home/hcoda1/2/iwang73/.conda/envs/alpa_env2/lib/python3.8/site-packages/jax/_src/traceback_util.py", line 162, in reraise_with_filtered_traceback
+    return fun(*args, **kwargs)
+  File "/storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/api.py", line 129, in __call__
+    self._decode_args_and_get_executable(*args))
+  File "/storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/api.py", line 199, in _decode_args_and_get_executable
+    executable = _compile_parallel_executable(f, in_tree, out_tree_hashable,
+  File "/storage/home/hcoda1/2/iwang73/.conda/envs/alpa_env2/lib/python3.8/site-packages/jax/linear_util.py", line 309, in memoized_fun
+    ans = call(fun, *args)
+  File "/storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/api.py", line 231, in _compile_parallel_executable
+    return method.compile_executable(fun, in_tree, out_tree_thunk,
+  File "/storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/parallel_method.py", line 239, in compile_executable
+    return compile_pipeshard_executable(
+  File "/storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/pipeline_parallel/compile_executable.py", line 111, in compile_pipeshard_executable
+    pipeshard_config = compile_pipeshard_executable_internal(
+  File "/storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/pipeline_parallel/compile_executable.py", line 172, in compile_pipeshard_executable_internal
+    manual_stage_option) = cluster_layers_and_slice_mesh(
+  File "/storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/pipeline_parallel/stage_construction.py", line 699, in cluster_layers_and_slice_mesh
+    exit() ## NEST - we only care about the stage construction
+  File "/storage/home/hcoda1/2/iwang73/.conda/envs/alpa_env2/lib/python3.8/_sitebuiltins.py", line 26, in __call__
+    raise SystemExit(code)
+SystemExit: None
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "alpa/pipeshard_parallelism_mixtral.py", line 151, in <module>
+    main()
+  File "alpa/pipeshard_parallelism_mixtral.py", line 147, in main
+    alpa.shutdown()
+  File "/storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/api.py", line 68, in shutdown
+    shutdown_global_cluster()
+  File "/storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/device_mesh.py", line 2383, in shutdown_global_cluster
+    global_cluster.delete_placement_group()
+  File "/storage/coda1/p-dmahajan7/0/iwang73/Nest/scripts/alpa/alpa/alpa/device_mesh.py", line 2265, in delete_placement_group
+    remove_placement_group(self.placement_group)
+  File "/storage/home/hcoda1/2/iwang73/.conda/envs/alpa_env2/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 155, in wrapper
+    return func(*args, **kwargs)
+  File "/storage/home/hcoda1/2/iwang73/.conda/envs/alpa_env2/lib/python3.8/site-packages/ray/util/placement_group.py", line 239, in remove_placement_group
+    assert placement_group is not None
+AssertionError
