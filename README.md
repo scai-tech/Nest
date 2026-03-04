@@ -6,7 +6,7 @@
 
 ## Table of Contents
 
-- [Installation](#installation)
+- [Installation](#installation-30-minutes)
 - [Obtaining a Gurobi License](#obtaining-a-gurobi-license)
 - [Experiments](#experiments)
   - [Experiment 1 — Figure 5](#experiment-1-reproducing-results-in-figure-5)
@@ -24,9 +24,11 @@
 ### Prerequisite
 The artifact is tested using Anaconda.
 
+NEST is compatible with any NVIDIA GPU supporting PyTorch 2.5 and CUDA 12.4 with at least 100 GB of RAM. When using the provided operator graphs and estimates included as part of this artifact, most experiments can also be executed in CPU-only environments with at least 64 GB of RAM.
+
 ### Setup
 ```bash
-git clone https://github.com/sitar-lab/Nest.git
+git clone https://github.com/scai-tech/Nest.git
 
 cd Nest
 conda env create -f environment.yml
@@ -106,12 +108,17 @@ Runs NEST and baselines (Manual, MCMC, Phaze) for Llama2-7B across device scales
 
 **Outputs:**
 ```
-scripts/tpuv4_fatTree/out/llama2_mbs1/
-  ├── llama2_mbs1_output_<num_device>.log
-  ├── llama2_mbs1.csv/
+scripts/tpuv4_fatTree/
+├── plots/
+│   └── llama2_mbs1_devices64_128_256_512_1024.png   # Output plot - corresponding to the Llama2-7B plot in Figure 5
+└── out/
+    └── llama2_mbs1/
+        ├── llama2_mbs1_output_<num_device>.log      # Simulation log files
+        └── llama2_mbs1.csv                          # Aggregated Summary
 ```
 
-The figure is saved to `scripts/tpuv4_fatTree/plots/llama2_mbs1_devices64_128_256_512_1024.png`, corresponding to the Llama2-7B plot in Figure 5. Console output reports throughput improvements for all baselines relative to the Manual baseline at 64 devices.
+The output plot is saved to `scripts/tpuv4_fatTree/plots/llama2_mbs1_devices64_128_256_512_1024.png`, which corresponds to the Llama2-7B plot in Figure 5. 
+Console output reports throughput improvements for all baselines relative to the Manual baseline at 64 devices.
 
 Expected results can also be found in table format [`scripts/tpuv4_fatTree/reference_results.md`](./scripts/tpuv4_fatTree/reference_results.md)
 
@@ -126,12 +133,15 @@ Runs NEST and baselines for all evaluated models (BertLarge, Llama2-7B, Llama3-7
 
 **Outputs:**
 ```
-scripts/tpuv4_fatTree/out/<model>_mbs1/
-  ├── <model>_mbs1_output_<num_device>.log
-  ├── <model>_mbs1.csv/
+scripts/tpuv4_fatTree/
+├── plots/                                            # Plot outputs
+└── out/
+    └── <model>_mbs1/
+        ├── <model>_mbs1_output_<num_device>.log      # Simulation log files
+        └── <model>_mbs1.csv                          # Aggregated Summary
 ```
 
-Figures are saved to `scripts/tpuv4_fatTree/plots/`.
+Figures are saved to `scripts/tpuv4_fatTree/plots/` in the format `<model>_mbs1_devices512.png`. These correspond to the 512-device sub-graph of Figure 5 for each model.
 Expected results can also be found in table format [`scripts/tpuv4_fatTree/reference_results.md`](./scripts/tpuv4_fatTree/reference_results.md)
 
 ---
@@ -143,7 +153,7 @@ Reproduces full per-model figures across all device scales:
 ./run_eval.sh <model>    # Options: bert, llama2, llama3, mixtral, gpt3
 ```
 
-Figures are saved to `scripts/tpuv4_fatTree/plots/`.
+Figures are saved to `scripts/tpuv4_fatTree/plots/`, in the format `<model>_mbs1_devices64_128_256_512_1024.png`, and can be compared to the full plot for each model in Figure 5.
 Expected results can also be found in table format [`scripts/tpuv4_fatTree/reference_results.md`](./scripts/tpuv4_fatTree/reference_results.md)
 
 > **Note:** GPT3 at 1024 devices will require higher RAM to run.
@@ -163,12 +173,16 @@ Runs NEST and baselines for Llama2-70B with microbatch sizes 1, 2, 4, and 8 at 2
 
 **Outputs:**
 ```
-scripts/tpuv4_fatTree/out/llama2_mbs<mbs>/
-  ├── llama2_mbs<mbs>_output_256.log
-  ├── llama2_mbs<mbs>.csv/
+scripts/tpuv4_fatTree/
+├── plots/
+│   └── llama2_dev256_mbs1_2_4_8.png               # Output plot: Llama2-7B (Figure 6)
+└── out/
+    └── llama2_mbs<mbs>/
+        ├── llama2_mbs<mbs>_output_256.log         # Simulation log files
+        └── llama2_mbs<mbs>.csv                    # Aggregated Summary
 ```
 
-The figure is saved to [`scripts/tpuv4_fatTree/plots/llama2_dev256_mbs1_2_4_8.png`](./scripts/tpuv4_fatTree/plots/), corresponding to the Llama2-7B plot in Figure 6.
+The output plot is saved to `scripts/tpuv4_fatTree/plots/llama2_dev256_mbs1_2_4_8.png` corresponding to the Llama2-7B plot in Figure 6.
 
 Expected results can also be found in table format [`scripts/tpuv4_fatTree/reference_results.md`](./scripts/tpuv4_fatTree/reference_results.md)
 
@@ -180,7 +194,7 @@ Expected results can also be found in table format [`scripts/tpuv4_fatTree/refer
 ./run_eval_mbs.sh llama3 256 1,2,4,8   # Llama3-70B
 ```
 
-Figures are saved to `scripts/tpuv4_fatTree/plots/`.
+Figures are saved to `scripts/tpuv4_fatTree/plots/`, in the format `scripts/tpuv4_fatTree/plots/<model>_dev256_mbs1_2_4_8.png`
 
 ---
 
@@ -208,7 +222,7 @@ scripts/h100_spineLeaf/out/mixtral_mbs1/
   ├── mixtral_mbs1.csv/
 ```
 
-**Expected results:**
+**Expected Console Output:**
 
 | Model   | Devices | Manual | MCMC   | Phaze  | NEST   | Runtime |
 |---------|---------|--------|--------|--------|--------|---------|
@@ -221,7 +235,7 @@ scripts/h100_spineLeaf/out/mixtral_mbs1/
 ./run_eval.sh mixtral 128
 ```
 
-**Expected results:**
+**Expected Console Output:**
 
 | Model   | Devices | Manual | MCMC   | Phaze  | NEST   | Runtime |
 |---------|---------|--------|--------|--------|--------|---------|
@@ -236,7 +250,7 @@ Running GPT3 at 1024 devices requires significant memory. Use 128 devices as an 
 ./run_eval.sh gpt3 128
 ```
 
-**Expected results:**
+**Expected Console Output:**
 
 | Model | Devices | Manual | MCMC   | Phaze  | NEST   | Runtime |
 |-------|---------|--------|--------|--------|--------|---------|
